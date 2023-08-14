@@ -1,0 +1,156 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\newcommand{\pow}[2]{#1^{#2}}
+\newcommand{\supra}[1]{\textsuperscript{#1}}
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+\footnotesize
+Fausto David Hernández Jasso \hfill\\   
+@FaustoJH \hfill\\
+fausto.david.hernandez.jasso@ciencias.unam.mx
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+Lógica Computacional I\\ 
+\normalsize 
+Introducción y Sintaxis de la Lógica de Proposiciones\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+\section{¿Por qué estudiar lógica computacional?}
+\noindent
+Porque la lógica en las ciencias de la computación, en cierto sentido es el \textbf{cálculo de la computación}
+el cuál es el fundamento matemático para tratar la información y razonar acerca del comportamiento de programas.
+\section{¿Por qué necesitamos la formalización del razonamiento correcto?}
+\noindent
+La lógica ha sido pieza clave para estructurar el pensamiento y el razonamiento:
+\begin{itemize}
+    \item Dar un fundamento a las matemáticas.
+    \item Eliminar errores del razonamiento.
+    \item Encontrar una forma eficiente para llegar a una justificación de una conclusión, dada cierta información en 
+    forma de premisas.
+\end{itemize}
+\section{Argumentos lógicos}
+\subsection{Definición}
+\noindent
+Es una colección finita de afirmaciones \textit{(proposiciones)} dividida en premisas y conclusión.
+\subsection{Acerca de las premisas y de la conclusión}
+\noindent
+Las premisas y la conclusión debe ser susceptibles de recibir un valor de verdad. El argumento lógico puede ser
+correcto o incorrecto.
+\subsection{Validez de un argumento}
+\noindent
+Un argumento es correcto o válido si suponiendo que sus premisas son ciertas, entonces necesariamente la 
+conclusión también lo es.
+\subsection{Ejemplo}
+\subsubsection{La isla de los caballeros y los bribones}
+\noindent
+En la isla de los caballeros y bribones sólo hay dos clases de habitantes, los caballeros que siempre dicen 
+la verdad y los bribones que siempre mienten.
+\newline
+Un náufrago llega a la isla y encuentra dos habitantes: A y B. El habitante A afirma: Yo soy un bribón o 
+B es un caballero. El acertijo consiste en averiguar cómo son A y B.
+\subsubsection{Lógica}
+\noindent
+\begin{align*}
+    p &:= \text{A es bribón} \\
+    q &:= \text{B es un caballero} \\
+    s & := p \lor q 
+\end{align*}
+\(s\) es lo que dijo A.
+\newline
+Supongamos que \(\mathcal{I}\left(p\right) = \top\)
+\newline 
+Así \(\mathcal{I}\left(s\right) = \bot\)
+\newline 
+Entonces \(\mathcal{I}\left(\neg s\right) = \top\)
+\newline
+Como \(\neg s \equiv \neg p \land \neg q\)
+\newline 
+Consecuentemente \(\mathcal{I}\left(\neg p \land \neg q\right) = \top\)
+\newline 
+Lo que implica que se cumpla
+\begin{align*}
+    \mathcal{I}\left(\neg p\right) &= \top \\
+    \mathcal{I}\left(\neg q\right) &= \top \\
+\end{align*}
+Por lo tanto concluimos que A:
+\[
+    \mathcal{I}\left(p\right) = \bot
+\]
+Por lo tanto hemos llegado a una contradicción, ya que A no puede ser bribón y no serlo al mismo tiempo.
+\newline 
+Supongamos que \(\mathcal{I}\left(p\right) = \bot\)
+\newline 
+Así \(\mathcal{I}\left(s\right) = \top\)
+\newline
+Como \( s \equiv p \lor q\)
+\newline 
+Así tenemos que \(\mathcal{I}\left(p\right) = \bot\) y \(\mathcal{I}\left(q\right) = \top\)
+\newline 
+En éste caso A no es bribón y B es un caballero, entonces concluimos que:
+\begin{itemize}
+    \item A es un caballero.
+    \item B es un caballero.
+\end{itemize} 
+\subsection{Características de un argumento lógico}
+\begin{itemize}
+    \item Involucran individuos.
+    \item Los individuos que involucran tienen propiedades.
+    \item Una proposición es una oración que puede calificarse como verdadera o falsa y habla de las propiedades de los individuos.
+    \item Se forman medinate proposiciones, clasificadas como premisas y conclusión del argumento.
+    \item Las porposiciones pueden ser compuestas.
+    \item Puede ser correcto o incorrecto.
+\end{itemize}
+\section{Sistema lógico}
+\noindent
+Cualquier sistema lógico consta al menos de los siguientes tres componentes:
+\begin{itemize}
+    \item Sintaxis.
+    \item Semántica.
+    \item Teoría de la prueba.
+\end{itemize}
+\subsection{Sintaxis}
+\noindent
+Lenguaje formal que se utilizará como medio de expresión.
+\subsection{Semántica}
+\noindent
+Mecanismo que proporciona significado al lenguaje formal dado por la sintaxis.
+\subsection{Teoría de la prueba}
+\noindent
+Se encarga de decidir la correctud de un argumento lógico por medios puramente sintácticos.
+\subsection{Propiedades}
+\subsubsection{Consistencia}
+\noindent
+No hay contradicciones
+\subsubsection{Correctud}
+\noindent
+Las reglas del sistema no pueden obtener una inferencia falsa a partir de una verdadera.
+\subsubsection{Completud}
+\noindent
+Todo lo verdadero es demostrable.
+\section{Lógica proposicional}
+\subsection{Proposición}
+\noindent
+Es un enunciado que puede calificarse como verdadero o falso.
+\subsection{Lenguaje \texttt{PROP}}
+\begin{itemize}
+    \item Símbolos o variables proposicionales \textit{(número infinito)}: \(p_{1}, \dotsc, p_{n}, \dotsc\)
+    \item Constantes lógicas: \(\top, \bot\)
+    \item Operadores lógicos: \(\neg, \land, \lor, \rightarrow, \leftrightarrow \)
+    \item Símbolos auxiliares: \(\left(\right)\)
+\end{itemize}
+\end{document}
