@@ -265,11 +265,31 @@ Definimos \(np\) como sigue:
     np\left(\varphi\right) &= 0 & \text{Si \(\varphi \in \text{\texttt{ATOM}}\)} \\ 
     np\left(\left(\neg \varphi \right)\right) &= 2 + np\left(\varphi\right) & \text{Si \(\varphi \in \text{\texttt{ATOM}}\)} \\ 
     np\left(\left(\varphi \star \psi \right)\right) &= 2 + np\left(\varphi\right) + np\left(\psi\right) & \text{con \(\star \in \left\{\land, \lor, \rightarrow, \leftrightarrow\right\}\)} \\ 
+    np\left(\neg \varphi\right) &= np\left(\varphi\right) \\
+    np\left(\varphi \star \psi \right) &= np\left(\varphi\right) + np\left(\psi\right) & \text{con \(\star \in \left\{\land, \lor, \rightarrow, \leftrightarrow\right\}\)}
 \end{align*}
 \subsection{Ejemplos de uso}
 \noindent
-Calculemos \(np\left(\left(\left(p \lor q\right) \rightarrow r\right) \leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right)\right)\)
+Calculemos \(np\left(\neg\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right)\right)\)
 \begin{align*}
-    np\left(\left(\left(p \lor q\right) \rightarrow r\right) \leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right)\right) &= &\text{Aplicamos }
+    np\left(\neg\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right)\right) &= 2 + np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right)  &\text{Aplicamos el segundo caso.} \\
+    np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right) &= 2 + np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right)\right) + np\left(p\right)  &\text{Aplicamos el quinto caso.} \\
+    np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right)\right) &= 2 + np\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \right) +  np\left(q\right)  &\text{Aplicamos el tercer caso.} \\
+    np\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \right) &= 2 + np\left(p\right) + np\left(\left(p \lor \left(\neg q\right)\right)\right)  &\text{Aplicamos el tercer caso.} \\
+    np\left(p\right) &= 0  &\text{Aplicamos el primer caso.} \\
+    np\left(\left(p \lor \left(\neg q\right)\right)\right) &= 2 + np\left(p\right) + np\left(\left(\neg q\right)\right)  &\text{Aplicamos el tercer caso.} \\
+    np\left(p\right) &= 0  &\text{Aplicamos el primer caso.} \\
+    np\left(\left(\neg q\right)\right) &= 2 + np\left(q\right) & \text{Aplicamos el segundo caso.} \\
+    np\left(q\right) &= 0 & \text{Aplicamos el primer caso.} \\
 \end{align*}
+Por lo tanto
+\begin{align*}
+    np\left(\left(\neg q\right)\right) &= 2 + np\left(q\right) = 2 + 0 = 2 \\
+    np\left(\left(p \lor \left(\neg q\right)\right)\right) &= 2 + np\left(p\right) + np\left(\left(\neg q\right)\right) = 2 + 0 + 2 = 4 \\
+    np\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \right) &= 2 + np\left(p\right) + np\left(\left(p \lor \left(\neg q\right)\right)\right) = 2 + 0 + 4 = 6 \\ 
+    np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right)\right) &= 2 + np\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \right) +  np\left(q\right) = 2 + 6 + 0 = 8 \\
+    np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right) &= 2 + np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right)\right) + np\left(p\right) = 2 + 8 + 0 = 10\\
+    np\left(\neg\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right)\right) &= 2 + np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right) = 2 + 10 = 12
+\end{align*}
+Por lo tanto el número de paréntesis que tiene la fórmula son 12.
 \end{document}
