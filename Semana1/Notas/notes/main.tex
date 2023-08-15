@@ -292,4 +292,210 @@ Por lo tanto
     np\left(\neg\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right)\right) &= 2 + np\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right) = 2 + 10 = 12
 \end{align*}
 Por lo tanto el número de paréntesis que tiene la fórmula son 12.
+\subsection{Definición de funciones recursivas}
+\noindent
+Define las siguientes funciones, indicando dominio y contradominio de la función definida.
+\begin{itemize}
+    \item Número de conectivos de una expresión: \(con\left(\varphi\right)\) devuelve el número de conectivos de \(\varphi\).
+    \item Variables de una expresión: \(vars\left(\varphi\right)\) devuelve el conjunto de variables que figuran en \(\varphi\).
+    \item Atómicas en una expresión: \(atom\left(\varphi\right)\) devuelve el número de presencias de fórmulas atómicas en \(\varphi\).
+\end{itemize}
+\subsubsection{Número de conectivos}
+\noindent
+Recordemos que los conectivos son:
+\[
+    \{\neg, \land, \lor, \rightarrow, \Leftrightarrow\}  
+\]
+Así tenemos que la correspondencia de nuestra función es:
+\[
+      con \ : \ \text{\texttt{PROP}} \to \mathbb{N}
+\]
+Definición de la función
+\begin{align*}
+    con\left(\varphi\right) &= 0 &\text{Sí \(\varphi \in\) \texttt{ATOM}} \\
+    con\left(\neg \varphi\right) &= 1 + con\left(\varphi\right) & \\
+    con\left(\varphi \star \psi \right) &= 1 + con\left(\varphi\right) + cons\left(\psi\right) & \text{con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\)} \\
+\end{align*}
+Hacemos la observación que \(\varphi\) y \(\psi\) pueden contener o no paréntesis es decir ambas pueden ser de la forma:
+\[
+    \left(\kappa \star \omega \right)  
+\]
+con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\) ó
+\[
+    \left(\neg \gamma\right)
+\]
+Para \(\kappa, \omega, \gamma \in \text{\texttt{PROP}}\).
+\subsubsection{Variables de una fórmula}
+Tenemos que la correspondencia de nuestra función es:
+\[
+      vars \ : \ \text{\texttt{PROP}} \to \{\text{\texttt{PROP}}\}
+\]
+Definición de la función
+\begin{align*}
+    vars\left(\varphi\right) &= \{ \varphi \} &\text{Sí \(\varphi \in\) \texttt{ATOM\(\setminus \left\{\bot, \top\right\}\)}} \\
+    vars\left(\neg \varphi\right) &= vars\left(\varphi\right) & \\
+    vars\left(\varphi \star \psi \right) &= vars\left(\varphi\right) \cup vars\left(\psi\right) & \text{con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\)} \\
+\end{align*}
+Hacemos la observación que \(\varphi\) y \(\psi\) pueden contener o no paréntesis es decir ambas pueden ser de la forma:
+\[
+    \left(\kappa \star \omega \right)  
+\]
+con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\) ó
+\[
+    \left(\neg \gamma\right)
+\]
+Para \(\kappa, \omega, \gamma \in \text{\texttt{PROP}}\).
+\subsubsection{Atómicas de una fórmula}
+\noindent
+Tenemos que la correspondencia de nuestra función es:
+\[
+      atom \ : \ \text{\texttt{PROP}} \to \mathbb{N}
+\]
+Definición de la función
+\begin{align*}
+    atom\left(\varphi\right) &= 1 &\text{Sí \(\varphi \in\) \texttt{ATOM}} \\
+    atom\left(\neg \varphi\right) &= atom\left(\varphi\right) & \\
+    atom\left(\varphi \star \psi \right) &= atom\left(\varphi\right) + atom\left(\psi\right) & \text{con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\)} \\
+\end{align*}
+Hacemos la observación que \(\varphi\) y \(\psi\) pueden contener o no paréntesis es decir ambas pueden ser de la forma:
+\[
+    \left(\kappa \star \omega \right)  
+\]
+con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\) ó
+\[
+    \left(\neg \gamma\right)
+\]
+Para \(\kappa, \omega, \gamma \in \text{\texttt{PROP}}\).
+\subsubsection{Ejercicio}
+\noindent
+Define una función \(depth\left(\varphi\right)\) que devuelve la altura del árbol de análisis sintáctico de \(\varphi\).
+\subsection{Principio de Inducción Estructural para \texttt{PROP}}
+\noindent
+Sea \(\mathcal{P}\) una propiedad acerca de fórmulas del lenguaje \texttt{PROP}. Para probar que toda fórmula 
+\(\varphi \in \text{\texttt{PROP}}\) tiene la propiedad \(\mathcal{P}\) basta demostrar lo siguiente:
+\begin{enumerate}
+    \item \textbf{Caso base: }toda variable proposicional tiene la propiedad \(\mathcal{P}\).
+    \item \textbf{Hipótesis de Inducción: } suponer que se cumple la propiedad \(\mathcal{P}\) para \(\varphi\) y \(\psi\).
+    \item \textbf{Paso Inductivo: } mostrar usando la hipótesis de inducción que:
+    \begin{enumerate}
+        \item \(\left(\neg \varphi\right)\) cumple \(\mathcal{P}\).
+        \item \(\left(\varphi \star \psi\right)\) cumple \(\mathcal{P}\) para todo \(\star \in \{\land, \lor, \rightarrow, \leftrightarrow\}\).
+    \end{enumerate}
+\end{enumerate}
+\subsubsection{Ejemplo}
+\noindent
+Demostrar mediante inducción estructural que se cumplen la siguiente desigualdad
+\[
+    atom\left(\varphi\right)  \leq 2 \cdot con\left(\varphi\right) + 1
+\]
+\begin{proof}
+    La demostración se hará por medio del \textbf{Principio de Inducción Estructural para \texttt{PROP}}.
+    \newline
+    \textbf{Caso Base}
+    \newline
+    Sea \(\varphi\) una variable proposicional entonces por definición de la función \(atom\) tenemos que:
+    \[
+        atom\left(\varphi\right) = 1
+    \]
+    Mientras por definición de la función \(cons\) tenemos que:
+    \[
+        2 \cdot con\left(\varphi\right) + 1 = 2 \cdot 0 + 1 = 0 + 1 = 1
+    \]
+    Entonces se cumple que
+    \[
+        1 \leq 1  
+    \]
+    Consecuentemente
+    \[
+        atom\left(\varphi\right) \leq  2 \cdot con\left(\varphi\right) 
+    \]
+    \textbf{Hipótesis de Inducción}
+    \newline 
+    Sean \(\varphi\) y \(\psi\) en \texttt{PROP} entonces \(\varphi\) y \(\psi\) cumplen que:
+    \begin{align*}
+        atom\left(\varphi\right)  &\leq 2 \cdot con\left(\varphi\right) + 1 \\
+        atom\left(\psi\right)  &\leq 2 \cdot con\left(\psi\right) + 1 \\
+    \end{align*}
+    \textbf{Paso inductivo}
+    \newline 
+    Sea \(\gamma \in \text{\texttt{PROP}}\) entonces demostraremos que 
+    \[
+        atom\left(\gamma\right)  \leq 2 \cdot con\left(\gamma\right) + 1  
+    \]
+    Caso 1
+    \newline 
+    \(\gamma \equiv \neg \varphi\)
+    \newline 
+    Por definición de la función \(atom\) tenemos que:
+    \[
+        atom\left(\neg \varphi\right) = atom\left(\varphi\right)
+    \]
+    Por \textbf{hipótesis de inducción}
+    \[
+        atom\left(\varphi\right) \leq 2 \cdot con\left(\varphi\right) + 1
+    \]
+    Notemos que:
+    \[
+        2 \cdot con\left(\varphi\right) + 1 = con\left(\varphi\right) + con\left(\varphi\right) + 1
+    \]
+    Es trivial ver que:
+    \[
+        con\left(\varphi\right) + con\left(\varphi\right) + 1 < con\left(\varphi\right) +  con\left(\varphi\right) + 1 + 1 + 1
+    \]
+    Por asociatividad tenemos que:
+    \[
+        con\left(\varphi\right) + con\left(\varphi\right) + 1 + 1 + 1 = con\left(\varphi\right) + 1 + con\left(\varphi\right) + 1 + 1
+    \]
+    Que por definición de la función \(con\) es:
+    \[
+        2 \cdot con\left(\varphi\right) + 1 < con\left(\neg \varphi\right) + con\left(\neg \varphi\right) + 1
+    \]
+    Que es equivalente a 
+    \[
+        2 \cdot con\left(\varphi\right) + 1 < 2 \cdot con\left(\neg \varphi\right) + 1
+    \]
+    Así tenemos que
+    \[
+        atom\left(\varphi\right) \leq 2 \cdot con\left(\varphi\right) + 1 < 2 \cdot con\left(\neg \varphi\right) + 1
+    \]
+    Por lo que podemos concluir que
+    \[
+        atom\left(\neg \varphi\right) \leq 2 \cdot con\left(\neg \varphi\right) + 1
+    \]
+    Caso 2
+    \newline 
+    \(\gamma \equiv \varphi \star \psi\)
+    \newline
+    Por definición de la función \(atom\) tenemos que:
+    \[
+        atom\left(\varphi \star \psi\right) = atom\left(\varphi\right) + atom\left(\psi\right) 
+    \]
+    Por \textbf{hipótesis de inducción}
+    \begin{align*}
+        atom\left(\varphi\right)  &\leq 2 \cdot con\left(\varphi\right) + 1 \\
+        atom\left(\psi\right)  &\leq 2 \cdot con\left(\psi\right) + 1 \\
+    \end{align*}
+    Así
+    \begin{align*}
+        atom\left(\varphi\right) + atom\left(\psi\right) &\leq 2 \cdot con\left(\varphi\right) + 1 + 2 \cdot con\left(\psi\right) + 1 \\
+        atom\left(\varphi\right) + atom\left(\psi\right) &\leq con\left(\varphi\right) + con\left(\varphi\right) + 1 + con\left(\psi\right) + con\left(\psi\right) + 1 \\
+        atom\left(\varphi\right) + atom\left(\psi\right) &\leq con\left(\varphi\right) + con\left(\psi\right) + 1 + con\left(\varphi\right) + con\left(\psi\right) + 1 \\
+        atom\left(\varphi\right) + atom\left(\psi\right) &\leq con\left(\varphi \star \psi\right) + con\left(\varphi \star \psi\right) \\
+        atom\left(\varphi\right) + atom\left(\psi\right) &\leq 2 \cdot con\left(\varphi \star \psi\right)
+    \end{align*}
+    Es inmediato ver que:
+    \begin{align*}
+        2 \cdot con\left(\varphi \star \psi\right) &< 2 \cdot con\left(\varphi \star \psi\right) + 1
+    \end{align*}
+    Por lo tanto
+    \begin{align*}
+        atom\left(\varphi\right) + atom\left(\psi\right) &\leq 2 \cdot con\left(\varphi \star \psi\right) + 1 \\
+        atom\left(\varphi \star \psi\right) &\leq 2 \cdot con\left(\varphi \star \psi\right) + 1 \\
+    \end{align*}
+    Por lo que podemos concluir que
+    \[
+        atom\left(\varphi \star \psi\right) \leq 2 \cdot con\left(\varphi \star \psi\right) + 1
+    \]
+    Por lo tanto se cumple la propiedad.
+\end{proof}
 \end{document}

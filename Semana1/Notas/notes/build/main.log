@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.18)  14 AUG 2023 22:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.18)  15 AUG 2023 00:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,36 +195,28 @@ Package: babel 2023/07/15 v3.92 The Babel package
 *
 (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
-Language: english 2017/06/06 v3.3r English support from the babel system
-Package babel Info: Hyphen rules for 'canadian' set to \l@english
-(babel)             (\language0). Reported on input line 102.
-Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 105.
-Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 108.
-) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman.ldf
-Language: ngerman 2021/02/27 v2.13 German support for babel (post-1996 orthography)
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngermanb.ldf
-Language: ngermanb 2021/02/27 v2.13 German support for babel (post-1996 orthography)
-Package babel Info: Making " an active character on input line 122.
-))) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\babel-ngerman.tex
-Package babel Info: Importing font and identification data for ngerman
-(babel)             from babel-de.ini. Reported on input line 11.
-) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
-Package babel Info: Importing font and identification data for english
-(babel)             from babel-en.ini. Reported on input line 11.
+) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks28
+\es@quotdepth=\count300
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+)) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks28
-\thm@bodyfont=\toks29
-\thm@headfont=\toks30
-\thm@notefont=\toks31
-\thm@headpunct=\toks32
+\thm@style=\toks29
+\thm@bodyfont=\toks30
+\thm@headfont=\toks31
+\thm@notefont=\toks32
+\thm@headpunct=\toks33
 \thm@preskip=\skip59
 \thm@postskip=\skip60
 \thm@headsep=\skip61
-\dth@everypar=\toks33
+\dth@everypar=\toks34
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
@@ -236,10 +228,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count300
-\float@exts=\toks34
+\c@float@type=\count301
+\float@exts=\toks35
 \float@box=\box56
-\@float@everytoks=\toks35
+\@float@everytoks=\toks36
 \@floatcapt=\box57
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
@@ -276,11 +268,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count301
+\c@section@level=\count302
 )
 \@linkdim=\dimen163
-\Hy@linkcounter=\count302
-\Hy@pagecounter=\count303
+\Hy@linkcounter=\count303
+\Hy@pagecounter=\count304
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -288,7 +280,7 @@ Now handling font encoding PD1 ...
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count304
+\Hy@SavedSpaceFactor=\count305
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -303,7 +295,7 @@ Package hyperref Info: Plain pages OFF on input line 4182.
 Package hyperref Info: Backreferencing OFF on input line 4187.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count305
+\c@Hy@tempcnt=\count306
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -315,7 +307,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count306
+\Fld@menulength=\count307
 \Field@Width=\dimen165
 \Fld@charsize=\dimen166
 Package hyperref Info: Hyper figures OFF on input line 6051.
@@ -329,9 +321,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6081.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count307
-\c@Item=\count308
-\c@Hfootnote=\count309
+\Hy@abspage=\count308
+\c@Item=\count309
+\c@Hfootnote=\count310
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -340,8 +332,8 @@ File: hpdftex.def 2023-07-08 v7.01b Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count310
-\c@bookmark@seq@number=\count311
+\Fld@listcount=\count311
+\c@bookmark@seq@number=\count312
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
@@ -367,14 +359,14 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@width=\dimen168
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count312
+\c@tracingmulticols=\count313
 \mult@box=\box58
 \multicol@leftmargin=\dimen169
-\c@unbalance=\count313
-\c@collectmore=\count314
-\doublecol@number=\count315
-\multicoltolerance=\count316
-\multicolpretolerance=\count317
+\c@unbalance=\count314
+\c@collectmore=\count315
+\doublecol@number=\count316
+\multicoltolerance=\count317
+\multicolpretolerance=\count318
 \full@width=\dimen170
 \page@free=\dimen171
 \premulticols=\dimen172
@@ -425,15 +417,15 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box99
 \@tempa=\box100
 \@tempa=\box101
-\c@minrows=\count318
-\c@columnbadness=\count319
-\c@finalcolumnbadness=\count320
+\c@minrows=\count319
+\c@columnbadness=\count320
+\c@finalcolumnbadness=\count321
 \last@try=\dimen175
 \multicolovershoot=\dimen176
 \multicolundershoot=\dimen177
 \mult@nat@firstbox=\box102
 \colbreak@box=\box103
-\mc@col@check@num=\count321
+\mc@col@check@num=\count322
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -462,11 +454,11 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count322
+\c@r@tfl@t=\count323
 \rotFPtop=\skip65
 \rotFPbot=\skip66
 \rot@float@box=\box104
-\rot@mess@toks=\toks36
+\rot@mess@toks=\toks37
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/censor\censor.sty
 Package: censor 2023/06/05\ 4.3\ Provides capability for redaction of sensitive information
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/pbox\pbox.sty
@@ -476,28 +468,28 @@ Package: pbox 2011/12/07 v1.2 Dynamic parboxes
 \censorruledepth=\skip68
 \censorruleheight=\skip69
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/tokcycle\tokcycle.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/tokcycle\tokcycle.tex
-\tc@tok=\toks37
-\tcdepth=\count323
-\cytoks=\toks38
+\tc@tok=\toks38
+\tcdepth=\count324
+\cytoks=\toks39
 )
 Package: tokcycle 2021/08/25 V1.42 Cycle through and transform a stream of tokens
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count324
+\lst@mode=\count325
 \lst@gtempboxa=\box105
-\lst@token=\toks39
-\lst@length=\count325
+\lst@token=\toks40
+\lst@length=\count326
 \lst@currlwidth=\dimen178
-\lst@column=\count326
-\lst@pos=\count327
+\lst@column=\count327
+\lst@pos=\count328
 \lst@lostspace=\dimen179
 \lst@width=\dimen180
-\lst@newlines=\count328
-\lst@lineno=\count329
+\lst@newlines=\count329
+\lst@lineno=\count330
 \lst@maxwidth=\dimen181
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count330
-\lst@skipnumbers=\count331
+\c@lstnumber=\count331
+\lst@skipnumbers=\count332
 \lst@framebox=\box106
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -522,15 +514,15 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \@fancybox=\box107
 \shadowsize=\dimen182
 \@Sbox=\box108
-\do@VerbBox=\toks40
-\the@fancyput=\toks41
-\this@fancyput=\toks42
-\EndVerbatimTokens=\toks43
+\do@VerbBox=\toks41
+\the@fancyput=\toks42
+\this@fancyput=\toks43
+\EndVerbatimTokens=\toks44
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read3
 )
-\c@pseudocode=\count332
-\c@pseudonum=\count333
+\c@pseudocode=\count333
+\c@pseudonum=\count334
 ) (style/avm.sty
 \avmdimen=\dimen183
 \avmboxone=\box109
@@ -547,15 +539,15 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen191
 \cmidrulekern=\dimen192
 \defaultaddspace=\dimen193
-\@cmidla=\count334
-\@cmidlb=\count335
+\@cmidla=\count335
+\@cmidlb=\count336
 \@aboverulesep=\dimen194
 \@belowrulesep=\dimen195
-\@thisruleclass=\count336
-\@lastruleclass=\count337
+\@thisruleclass=\count337
+\@lastruleclass=\count338
 \@thisrulewidth=\dimen196
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/tikz-qtree\tikz-qtree.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
-\pgfutil@everybye=\toks44
+\pgfutil@everybye=\toks45
 \pgfutil@tempdima=\dimen197
 \pgfutil@tempdimb=\dimen198
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
@@ -567,10 +559,10 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks45
-\pgfkeys@temptoks=\toks46
+\pgfkeys@pathtoks=\toks46
+\pgfkeys@temptoks=\toks47
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks47
+\pgfkeys@tmptoks=\toks48
 ))
 \pgf@x=\dimen199
 \pgf@y=\dimen256
@@ -584,14 +576,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen264
 \w@pgf@writea=\write4
 \r@pgf@reada=\read4
-\c@pgf@counta=\count338
-\c@pgf@countb=\count339
-\c@pgf@countc=\count340
-\c@pgf@countd=\count341
-\t@pgf@toka=\toks48
-\t@pgf@tokb=\toks49
-\t@pgf@tokc=\toks50
-\pgf@sys@id@count=\count342
+\c@pgf@counta=\count339
+\c@pgf@countb=\count340
+\c@pgf@countc=\count341
+\c@pgf@countd=\count342
+\t@pgf@toka=\toks49
+\t@pgf@tokb=\toks50
+\t@pgf@tokc=\toks51
+\pgf@sys@id@count=\count343
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -602,21 +594,21 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count343
-\pgfsyssoftpath@bigbuffer@items=\count344
+\pgfsyssoftpath@smallbuffer@items=\count344
+\pgfsyssoftpath@bigbuffer@items=\count345
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen265
-\pgfmath@count=\count345
+\pgfmath@count=\count346
 \pgfmath@box=\box112
-\pgfmath@toks=\toks51
-\pgfmath@stack@operand=\toks52
-\pgfmath@stack@operation=\toks53
+\pgfmath@toks=\toks52
+\pgfmath@stack@operand=\toks53
+\pgfmath@stack@operation=\toks54
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count346
+\c@pgfmathroundto@lastzeros=\count347
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen266
@@ -646,7 +638,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box113
 \pgf@hbox=\box114
 \pgf@layerbox@main=\box115
-\pgf@picture@serial@count=\count347
+\pgf@picture@serial@count=\count348
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen284
@@ -667,8 +659,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen289
-\pgf@sys@shading@range@num=\count348
-\pgf@shadingcount=\count349
+\pgf@sys@shading@range@num=\count349
+\pgf@shadingcount=\count350
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
@@ -697,13 +689,13 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen292
 \pgffor@skip=\dimen293
-\pgffor@stack=\toks54
-\pgffor@toks=\toks55
+\pgffor@stack=\toks55
+\pgffor@toks=\toks56
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count350
+\pgf@plot@mark@count=\count351
 \pgfplotmarksize=\dimen294
 )
 \tikz@lastx=\dimen295
@@ -718,17 +710,17 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box119
 \tikz@tempbox=\box120
 \tikz@tempbox@bg=\box121
-\tikztreelevel=\count351
-\tikznumberofchildren=\count352
-\tikznumberofcurrentchild=\count353
-\tikz@fig@count=\count354
+\tikztreelevel=\count352
+\tikznumberofchildren=\count353
+\tikznumberofcurrentchild=\count354
+\tikz@fig@count=\count355
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count355
-\pgfmatrixcurrentcolumn=\count356
-\pgf@matrix@numberofcolumns=\count357
+\pgfmatrixcurrentrow=\count356
+\pgfmatrixcurrentcolumn=\count357
+\pgf@matrix@numberofcolumns=\count358
 )
-\tikz@expandcount=\count358
+\tikz@expandcount=\count359
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/tikz-qtree\pgftree.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/tikz-qtree\pgfsubpic.sty (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/tikz-qtree\pgfsubpic.tex
@@ -747,9 +739,9 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgftree@savechildx=\dimen314
 \pgftree@childy=\dimen315
 \pgftree@savechildy=\dimen316
-\pgftree@childi=\count359
-\pgftree@savechildi=\count360
-\pgftree@level=\count361
+\pgftree@childi=\count360
+\pgftree@savechildi=\count361
+\pgftree@level=\count362
 \pgftree@depth=\dimen317
 \pgf@subpic@hbox@children=\box122
 \pgf@subpic@minx@children=\dimen318
@@ -759,9 +751,9 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgftree@lastchildx=\dimen322
 \pgftree@lastchildy=\dimen323
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/tikz-qtree\tikz-qtree.tex
-\@result=\toks56
-\child@list=\toks57
-\root@node=\toks58
+\@result=\toks57
+\child@list=\toks58
+\root@node=\toks59
 )) (style/btree.sty
 Package: style/btree 
 
@@ -819,7 +811,7 @@ File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfdecoratedinputsegmentcompleteddistance=\dimen327
 \pgfdecoratedinputsegmentremainingdistance=\dimen328
 \pgf@decorate@distancetomove=\dimen329
-\pgf@decorate@repeatstate=\count362
+\pgf@decorate@repeatstate=\count363
 \pgfdecorationsegmentamplitude=\dimen330
 \pgfdecorationsegmentlength=\dimen331
 )
@@ -830,53 +822,53 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count363
+\lrq@indent=\count364
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count364
-\c@listtotal=\count365
-\c@listcount=\count366
-\c@liststart=\count367
-\c@liststop=\count368
-\c@citecount=\count369
-\c@citetotal=\count370
-\c@multicitecount=\count371
-\c@multicitetotal=\count372
-\c@instcount=\count373
-\c@maxnames=\count374
-\c@minnames=\count375
-\c@maxitems=\count376
-\c@minitems=\count377
-\c@citecounter=\count378
-\c@maxcitecounter=\count379
-\c@savedcitecounter=\count380
-\c@uniquelist=\count381
-\c@uniquename=\count382
-\c@refsection=\count383
-\c@refsegment=\count384
-\c@maxextratitle=\count385
-\c@maxextratitleyear=\count386
-\c@maxextraname=\count387
-\c@maxextradate=\count388
-\c@maxextraalpha=\count389
-\c@abbrvpenalty=\count390
-\c@highnamepenalty=\count391
-\c@lownamepenalty=\count392
-\c@maxparens=\count393
-\c@parenlevel=\count394
-\blx@tempcnta=\count395
-\blx@tempcntb=\count396
-\blx@tempcntc=\count397
-\c@blx@maxsection=\count398
-\blx@maxsegment@0=\count399
-\blx@notetype=\count400
-\blx@parenlevel@text=\count401
-\blx@parenlevel@foot=\count402
-\blx@sectionciteorder@0=\count403
-\blx@sectionciteorderinternal@0=\count404
-\blx@entrysetcounter=\count405
-\blx@biblioinstance=\count406
+\c@tabx@nest=\count365
+\c@listtotal=\count366
+\c@listcount=\count367
+\c@liststart=\count368
+\c@liststop=\count369
+\c@citecount=\count370
+\c@citetotal=\count371
+\c@multicitecount=\count372
+\c@multicitetotal=\count373
+\c@instcount=\count374
+\c@maxnames=\count375
+\c@minnames=\count376
+\c@maxitems=\count377
+\c@minitems=\count378
+\c@citecounter=\count379
+\c@maxcitecounter=\count380
+\c@savedcitecounter=\count381
+\c@uniquelist=\count382
+\c@uniquename=\count383
+\c@refsection=\count384
+\c@refsegment=\count385
+\c@maxextratitle=\count386
+\c@maxextratitleyear=\count387
+\c@maxextraname=\count388
+\c@maxextradate=\count389
+\c@maxextraalpha=\count390
+\c@abbrvpenalty=\count391
+\c@highnamepenalty=\count392
+\c@lownamepenalty=\count393
+\c@maxparens=\count394
+\c@parenlevel=\count395
+\blx@tempcnta=\count396
+\blx@tempcntb=\count397
+\blx@tempcntc=\count398
+\c@blx@maxsection=\count399
+\blx@maxsegment@0=\count400
+\blx@notetype=\count401
+\blx@parenlevel@text=\count402
+\blx@parenlevel@foot=\count403
+\blx@sectionciteorder@0=\count404
+\blx@sectionciteorderinternal@0=\count405
+\blx@entrysetcounter=\count406
+\blx@biblioinstance=\count407
 \labelnumberwidth=\skip71
 \labelalphawidth=\skip72
 \biblabelsep=\skip73
@@ -888,9 +880,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read5
 \blx@bcfout=\write5
 \blx@langwohyphens=\language80
-\c@mincomprange=\count407
-\c@maxcomprange=\count408
-\c@mincompwidth=\count409
+\c@mincomprange=\count408
+\c@maxcomprange=\count409
+\c@mincompwidth=\count410
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -900,74 +892,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count410
-\c@savedafterword=\count411
-\c@annotator=\count412
-\c@savedannotator=\count413
-\c@author=\count414
-\c@savedauthor=\count415
-\c@bookauthor=\count416
-\c@savedbookauthor=\count417
-\c@commentator=\count418
-\c@savedcommentator=\count419
-\c@editor=\count420
-\c@savededitor=\count421
-\c@editora=\count422
-\c@savededitora=\count423
-\c@editorb=\count424
-\c@savededitorb=\count425
-\c@editorc=\count426
-\c@savededitorc=\count427
-\c@foreword=\count428
-\c@savedforeword=\count429
-\c@holder=\count430
-\c@savedholder=\count431
-\c@introduction=\count432
-\c@savedintroduction=\count433
-\c@namea=\count434
-\c@savednamea=\count435
-\c@nameb=\count436
-\c@savednameb=\count437
-\c@namec=\count438
-\c@savednamec=\count439
-\c@translator=\count440
-\c@savedtranslator=\count441
-\c@shortauthor=\count442
-\c@savedshortauthor=\count443
-\c@shorteditor=\count444
-\c@savedshorteditor=\count445
-\c@labelname=\count446
-\c@savedlabelname=\count447
-\c@institution=\count448
-\c@savedinstitution=\count449
-\c@lista=\count450
-\c@savedlista=\count451
-\c@listb=\count452
-\c@savedlistb=\count453
-\c@listc=\count454
-\c@savedlistc=\count455
-\c@listd=\count456
-\c@savedlistd=\count457
-\c@liste=\count458
-\c@savedliste=\count459
-\c@listf=\count460
-\c@savedlistf=\count461
-\c@location=\count462
-\c@savedlocation=\count463
-\c@organization=\count464
-\c@savedorganization=\count465
-\c@origlocation=\count466
-\c@savedoriglocation=\count467
-\c@origpublisher=\count468
-\c@savedorigpublisher=\count469
-\c@publisher=\count470
-\c@savedpublisher=\count471
-\c@language=\count472
-\c@savedlanguage=\count473
-\c@origlanguage=\count474
-\c@savedoriglanguage=\count475
-\c@pageref=\count476
-\c@savedpageref=\count477
+\c@afterword=\count411
+\c@savedafterword=\count412
+\c@annotator=\count413
+\c@savedannotator=\count414
+\c@author=\count415
+\c@savedauthor=\count416
+\c@bookauthor=\count417
+\c@savedbookauthor=\count418
+\c@commentator=\count419
+\c@savedcommentator=\count420
+\c@editor=\count421
+\c@savededitor=\count422
+\c@editora=\count423
+\c@savededitora=\count424
+\c@editorb=\count425
+\c@savededitorb=\count426
+\c@editorc=\count427
+\c@savededitorc=\count428
+\c@foreword=\count429
+\c@savedforeword=\count430
+\c@holder=\count431
+\c@savedholder=\count432
+\c@introduction=\count433
+\c@savedintroduction=\count434
+\c@namea=\count435
+\c@savednamea=\count436
+\c@nameb=\count437
+\c@savednameb=\count438
+\c@namec=\count439
+\c@savednamec=\count440
+\c@translator=\count441
+\c@savedtranslator=\count442
+\c@shortauthor=\count443
+\c@savedshortauthor=\count444
+\c@shorteditor=\count445
+\c@savedshorteditor=\count446
+\c@labelname=\count447
+\c@savedlabelname=\count448
+\c@institution=\count449
+\c@savedinstitution=\count450
+\c@lista=\count451
+\c@savedlista=\count452
+\c@listb=\count453
+\c@savedlistb=\count454
+\c@listc=\count455
+\c@savedlistc=\count456
+\c@listd=\count457
+\c@savedlistd=\count458
+\c@liste=\count459
+\c@savedliste=\count460
+\c@listf=\count461
+\c@savedlistf=\count462
+\c@location=\count463
+\c@savedlocation=\count464
+\c@organization=\count465
+\c@savedorganization=\count466
+\c@origlocation=\count467
+\c@savedoriglocation=\count468
+\c@origpublisher=\count469
+\c@savedorigpublisher=\count470
+\c@publisher=\count471
+\c@savedpublisher=\count472
+\c@language=\count473
+\c@savedlanguage=\count474
+\c@origlanguage=\count475
+\c@savedoriglanguage=\count476
+\c@pageref=\count477
+\c@savedpageref=\count478
 \shorthandwidth=\skip79
 \shortjournalwidth=\skip80
 \shortserieswidth=\skip81
@@ -991,19 +983,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count478
-\c@textcitetotal=\count479
-\c@textcitemaxnames=\count480
-\c@biburlbigbreakpenalty=\count481
-\c@biburlbreakpenalty=\count482
-\c@biburlnumpenalty=\count483
-\c@biburlucpenalty=\count484
-\c@biburllcpenalty=\count485
+\c@textcitecount=\count479
+\c@textcitetotal=\count480
+\c@textcitemaxnames=\count481
+\c@biburlbigbreakpenalty=\count482
+\c@biburlbreakpenalty=\count483
+\c@biburlnumpenalty=\count484
+\c@biburlucpenalty=\count485
+\c@biburllcpenalty=\count486
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count486
+\c@smartand=\count487
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1013,8 +1005,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count487
-\c@bbx:relatedtotal=\count488
+\c@bbx:relatedcount=\count488
+\c@bbx:relatedtotal=\count489
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1043,7 +1035,7 @@ Package biblatex Info: Document encoding is UTF8 ....
 Package: expl3 2023-06-30 L3 programming layer (loader) 
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count489
+\l__color_backend_stack_int=\count490
 \l__pdf_internal_box=\box144
 ))
 Package biblatex Info: ... and expl3
@@ -1056,13 +1048,13 @@ Package: xparse 2023-02-02 L3 Experimental document command parser
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count490
-\csq@gtype=\count491
-\csq@glevel=\count492
-\csq@qlevel=\count493
-\csq@maxlvl=\count494
-\csq@tshold=\count495
-\csq@ltx@everypar=\toks59
+\csq@reset=\count491
+\csq@gtype=\count492
+\csq@glevel=\count493
+\csq@qlevel=\count494
+\csq@maxlvl=\count495
+\csq@tshold=\count496
+\csq@ltx@everypar=\toks60
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
@@ -1077,63 +1069,52 @@ Package: fmtcount 2020/01/30 v3.07
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks60
-\XKV@tempa@toks=\toks61
+\XKV@toks=\toks61
+\XKV@tempa@toks=\toks62
 )
-\XKV@depth=\count496
+\XKV@depth=\count497
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fcprefix.sty
 Package: fcprefix 2012/09/28
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fcnumparser.sty
 Package: fcnumparser 2017/06/15
-\fc@digit@counter=\count497
+\fc@digit@counter=\count498
 ))
-\c@padzeroesN=\count498
-\fc@tmpcatcode=\count499
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-english.def
-File: fc-english.def 2016/01/12
-) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-ngerman.def
-File: fc-ngerman.def 2012/06/18
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-german.def
-File: fc-german.def 2018/06/17
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-germanb.def
-File: fc-germanb.def 2013/08/17
-)) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-ngermanb.def
-File: fc-ngermanb.def 2013/08/17
-))
-\@DT@modctr=\count500
-\@ordinalctr=\count501
-\@orgargctr=\count502
-\@strctr=\count503
-\@tmpstrctr=\count504
-\@DT@loopN=\count505
-\@DT@X=\count506
+\c@padzeroesN=\count499
+\fc@tmpcatcode=\count500
+\@DT@modctr=\count501
+\@ordinalctr=\count502
+\@orgargctr=\count503
+\@strctr=\count504
+\@tmpstrctr=\count505
+\@DT@loopN=\count506
+\@DT@X=\count507
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/datetime\datetime-defaults.sty
 Package: datetime-defaults 2013/09/10
 )
-\@day=\count507
-\@month=\count508
-\@year=\count509
-\c@HOUR=\count510
-\c@HOURXII=\count511
-\c@MINUTE=\count512
-\c@TOHOUR=\count513
-\c@TOMINUTE=\count514
-\c@SECOND=\count515
-\currenthour=\count516
-\currentminute=\count517
-\currentsecond=\count518
+\@day=\count508
+\@month=\count509
+\@year=\count510
+\c@HOUR=\count511
+\c@HOURXII=\count512
+\c@MINUTE=\count513
+\c@TOHOUR=\count514
+\c@TOMINUTE=\count515
+\c@SECOND=\count516
+\currenthour=\count517
+\currentminute=\count518
+\currentsecond=\count519
 Package datetime Info: No datetime.cfg file found, using default settings on input line 308.
-\@dtctr=\count519
-\dayofyear=\count520
-\dayofweek=\count521
+\@dtctr=\count520
+\dayofyear=\count521
+\dayofweek=\count522
 LaTeX Info: Redefining \today on input line 736.
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/datetime\dt-ngerman.def
-File: dt-ngerman.def 2013/09/10
-LaTeX Info: Redefining \datengerman on input line 86.
+ (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/datetime\dt-spanish.def
+File: dt-spanish.def 2013/09/10
+LaTeX Info: Redefining \datespanish on input line 85.
 )
-\dt@a=\toks62
-\dt@b=\toks63
+\dt@a=\toks63
+\dt@b=\toks64
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip93
@@ -1149,11 +1130,14 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
-Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
+Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 LaTeX Font Info:    Trying to load font information for OT1+bch on input line 5.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1bch.fd
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
-) (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.aux)
+) (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.aux
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1193,6 +1177,8 @@ Package microtype Info: No adjustment of character kerning.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-bch.cfg
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 )
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
 Package hyperref Info: Link coloring ON on input line 5.
  (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.out) (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.out)
 \@outlinefile=\write6
@@ -1200,42 +1186,28 @@ Package hyperref Info: Link coloring ON on input line 5.
 
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count522
+\scratchcounter=\count523
 \scratchdimen=\dimen332
 \scratchbox=\box145
-\nofMPsegments=\count523
-\nofMParguments=\count524
-\everyMPshowfont=\toks64
-\MPscratchCnt=\count525
+\nofMPsegments=\count524
+\nofMParguments=\count525
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count526
 \MPscratchDim=\dimen333
-\MPnumerator=\count526
-\makeMPintoPDFobject=\count527
-\everyMPtoPDFconversion=\toks65
+\MPnumerator=\count527
+\makeMPintoPDFobject=\count528
+\everyMPtoPDFconversion=\toks66
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count528
-Package biblatex Info: Trying to load language 'ngerman'...
-Package biblatex Info: ... file 'ngerman.lbx' found.
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\ngerman.lbx
-File: ngerman.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.lbx
-File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.lbx
-File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
-))
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
-File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+\c@lstlisting=\count529
+Package biblatex Info: Trying to load language 'spanish'...
+Package biblatex Info: ... file 'spanish.lbx' found.
+ (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\spanish.lbx
+File: spanish.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1270,10 +1242,6 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 19.
  (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 41.
- (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1bch.fd
-File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [1
 
 {C:/Users/faust/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2]
@@ -1285,7 +1253,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[3] [4] [5] (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.aux)
+[3] [4] [5] [6] [7] [8] (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.aux
+LaTeX Info: Redefining \sptext on input line 23.
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
@@ -1295,23 +1267,23 @@ L3 programming layer <2023-06-30>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 69219D795D1A79ED83B517B30E075E8D;5411.
+(rerunfilecheck)             Checksum: DB0C393D7058C592AC5D9E30C8A01C06;6738.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39356 strings out of 475551
- 759379 string characters out of 5762554
- 1948238 words of memory out of 5000000
- 59762 multiletter control sequences out of 15000+600000
- 582277 words of font info for 120 fonts, out of 8000000 for 9000
- 1143 hyphenation exceptions out of 8191
- 104i,14n,104p,1176b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 39447 strings out of 475551
+ 757765 string characters out of 5762554
+ 1951238 words of memory out of 5000000
+ 59879 multiletter control sequences out of 15000+600000
+ 582146 words of font info for 119 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 104i,14n,104p,1176b,1788s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.pdf (5 pages, 146082 bytes).
+Output written on c:\Users\faust\Documents\Logica_Computacional\logica-computacional\Semana1\Notas\notes\build\main.pdf (8 pages, 162164 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 40709 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
+ 38717 words of extra memory for PDF output out of 42996 (max. 10000000)
 
