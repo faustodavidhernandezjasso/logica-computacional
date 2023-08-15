@@ -153,4 +153,93 @@ Es un enunciado que puede calificarse como verdadero o falso.
     \item Operadores lógicos: \(\neg, \land, \lor, \rightarrow, \leftrightarrow \)
     \item Símbolos auxiliares: \(\left(\right)\)
 \end{itemize}
+El conjunto de expresiones o fórmulas atómicas, denotado como \texttt{ATOM} consta de:
+\begin{itemize}
+    \item Variables proposicionales: \(p_{1}, p_{2}, \dotsc, p_{n}, \dotsc\)
+    \item Constantes lógicas: \(\top, \bot\)
+\end{itemize}
+\subsection{Expresiones en el lenguaje \texttt{PROP}}
+\subsubsection{Definición recursiva}
+\begin{itemize}
+    \item Si \(\varphi \in \text{\texttt{ATOM}}\) entonces \(\varphi \in \text{\texttt{PROP}}\).
+    \item Si \(\varphi \in \text{\texttt{PROP}}\) entonces \(\left(\neg \varphi\right) \in \text{\texttt{PROP}}\).
+    \item Sí \(\varphi, \psi \in \text{\texttt{PROP}}\) entonces \(\left(\varphi \land \psi \right), \left(\varphi \lor \psi \right), \left(\varphi \rightarrow \psi \right), \left(\varphi \leftrightarrow \psi \right) \in \text{\texttt{PROP}}\).
+    \item Son todas.
+\end{itemize}
+\subsubsection{Backus-Naur}
+\begin{align*}
+    VarP &::= p_{1} \ | \ p_{2} \ | \ \dotsc \ | \ p_{n} \ | \ \dotsc  \\
+    \varphi, \psi &::= VarP \ | \ \top \ | \ \bot \ | \ \left(\neg \varphi\right)  \ | \ \left(\varphi \land \psi \right) \ | \ \left(\varphi \lor \psi \right)  \ | \ \left(\varphi \rightarrow \psi \right)  \ | \ \left(\varphi \leftrightarrow \psi \right)  \ |
+\end{align*}
+\subsection{Precedencia y asociatividad de los operadores lógicos}
+Precedencia de mayor a menor
+\begin{itemize}
+    \item \(\neg\)
+    \item \(\lor, \land\)
+    \item \(\rightarrow\)
+    \item \(\leftrightarrow\)
+\end{itemize}
+Operadores asociativos:
+\begin{itemize}
+    \item \(\neg\)
+    \item \(\lor, \land\)
+    \item \(\leftrightarrow\)
+\end{itemize}
+El operador \(\rightarrow\) asocia hacia la derecha.
+\newline 
+Ejemplificando lo anterior la expresión
+\[
+    \varphi_{1} \rightarrow \varphi_{2} \rightarrow \varphi_{3}  
+\]
+Queda asociada como:
+\[
+    \varphi_{1} \rightarrow \left(\varphi_{2} \rightarrow \varphi_{3}\right)  
+\]
+\subsection{Eliminación de paréntesis innecesarios}
+\noindent
+Notemos que:
+\[
+     p \land q \rightarrow \neg q \lor s  
+\]
+es igual a
+\[
+    \left(p \land q\right) \rightarrow \left(\left(\neg q \right) \lor s\right)  
+\]
+Pero ¿Cómo podemos obtener la primera sí nos dan la última?
+\newline 
+Simplemente debemos de ir quitando paréntesis guiándonos por la precedencia de operadores
+\begin{align*}
+    \left(p \land q\right) &\rightarrow \left(\left(\neg q \right) \lor s\right) &\\
+    \left(p \land q\right) &\rightarrow \left(\neg q \lor s\right) &\text{Eliminamos el paréntesis del operador \(\neg\)}\\
+    p \land q &\rightarrow \neg q \lor s &\text{Eliminamos el paréntesis del operador \(\lor\) y \(\land\)}
+\end{align*}
+Veamos \(\left(p \rightarrow q \land r\right) \leftrightarrow \left(s \lor \left(\neg t\right)\right)\)
+\begin{align*}
+    \left(p \rightarrow q \land r\right) &\leftrightarrow \left(s \lor \left(\neg t\right)\right) &\\
+    \left(p \rightarrow q \land r\right) &\leftrightarrow \left(s \lor \neg t\right) &\text{Eliminamos el paréntesis del operador \(\neg\)}\\
+    \left(p \rightarrow q \land r\right) &\leftrightarrow s \lor \neg t &\text{Eliminamos el paréntesis del operador \(\lor\)}\\
+    p \rightarrow q \land r &\leftrightarrow s \lor \neg t &\text{Eliminamos el paréntesis del operador \(\rightarrow\)}\\
+\end{align*}
+Veamos \(\left(\left(p \lor q\right) \rightarrow r\right) \leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right)\)
+\begin{align*}
+    \left(\left(p \lor q\right) \rightarrow r\right) &\leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right) & \\
+    \left(\left(p \lor q\right) \rightarrow r\right) &\leftrightarrow \left(\neg r \rightarrow \left(\neg\left(p \lor q\right)\right) \right) & \text{Eliminamos el paréntesis del operador \(\neg\)} \\
+    \left(\left(p \lor q\right) \rightarrow r\right) &\leftrightarrow \left(\neg r \rightarrow \neg\left(p \lor q\right) \right) & \text{Eliminamos el paréntesis del operador \(\neg\)} \\
+    p \lor q \rightarrow r &\leftrightarrow \left(\neg r \rightarrow \neg\left(p \lor q\right) \right) & \text{Eliminamos el paréntesis del operador \(\rightarrow\)} \\
+    p \lor q \rightarrow r &\leftrightarrow \neg r \rightarrow \neg\left(p \lor q\right) & \text{Eliminamos el paréntesis del operador \(\rightarrow\)}
+\end{align*}
+Veamos \(\neg\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right)\)
+\begin{align*}
+    &\neg\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q \right) \land p\right) & \\
+    &\neg\left(\left(\left(p \land \left(p \lor \neg q\right)\right) \land q \right) \land p\right) & \text{Eliminamos el paréntesis del operador \(\neg\)}\\
+    &\neg\left(\left(p \land \left(p \lor \neg q\right) \land q \right) \land p\right) & \text{Eliminamos el paréntesis del operador \(\land\)}\\
+    &\neg\left(p \land \left(p \lor \neg q\right) \land q \land p\right) & \text{Eliminamos el paréntesis del operador \(\land\)}\\
+\end{align*}
+Veamos \(\left(\neg s\right) \rightarrow \left(\left(\neg t\right) \land \neg \left(p \lor q\right) \right)\)
+\begin{align*}
+    \left(\neg s\right) &\rightarrow \left(\left(\neg t\right) \land \neg \left(p \lor q\right) \right) &\\
+    \neg s &\rightarrow \left(\left(\neg t\right) \land \neg \left(p \lor q\right) \right) & \text{Eliminamos el paréntesis del operador \(\neg\)} \\
+    \neg s &\rightarrow \left(\neg t \land \neg \left(p \lor q\right) \right) & \text{Eliminamos el paréntesis del operador \(\neg\)} \\
+    \neg s &\rightarrow \neg t \land \neg \left(p \lor q\right) & \text{Eliminamos el paréntesis del operador \(\land\)} \\
+\end{align*}
 \end{document}
