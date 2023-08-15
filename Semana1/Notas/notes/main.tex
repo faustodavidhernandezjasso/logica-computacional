@@ -242,4 +242,34 @@ Veamos \(\left(\neg s\right) \rightarrow \left(\left(\neg t\right) \land \neg \l
     \neg s &\rightarrow \left(\neg t \land \neg \left(p \lor q\right) \right) & \text{Eliminamos el paréntesis del operador \(\neg\)} \\
     \neg s &\rightarrow \neg t \land \neg \left(p \lor q\right) & \text{Eliminamos el paréntesis del operador \(\land\)} \\
 \end{align*}
+\subsubsection{Ejercicio}
+\noindent
+Elimina los paréntesis innecesarios de la expresión \(\left(p \rightarrow \left(q \land \left(\neg q\right)\right)\right) \rightarrow \left(\left(\neg p\right) \rightarrow p\right)\)
+\section{Definiciones Recursivas y el Principio de Inducción}
+\subsection{¿En qué consiste?}
+\noindent
+En establecer las construcciones para generar elementos de una colección o de una estructura de datos.
+\newline
+La definición del lenguaje \texttt{PROP} es un ejemplo de ésta clase de definiciones, podemos identificar las 
+construcciones básicas o atómicas y las construcciones recursivas.
+\newline 
+Las definiciones recursivas también sirven para definir propiedades o funciones de una estructura mediante un
+análisis de casos, es decir de las distintas formas sintácticas que definen a los elementos de dicha estructura.
+\subsection{Ejemplo}
+\noindent
+Sea \(np\) una función que devuelve el número de paréntesis de una expresión lógica.
+\newline 
+Definimos \(np\) como sigue:
+\begin{align*}
+    np \ &: \ \text{\texttt{PROP}} \to \mathbb{N} &  \\ 
+    np\left(\varphi\right) &= 0 & \text{Si \(\varphi \in \text{\texttt{ATOM}}\)} \\ 
+    np\left(\left(\neg \varphi \right)\right) &= 2 + np\left(\varphi\right) & \text{Si \(\varphi \in \text{\texttt{ATOM}}\)} \\ 
+    np\left(\left(\varphi \star \psi \right)\right) &= 2 + np\left(\varphi\right) + np\left(\psi\right) & \text{con \(\star \in \left\{\land, \lor, \rightarrow, \leftrightarrow\right\}\)} \\ 
+\end{align*}
+\subsection{Ejemplos de uso}
+\noindent
+Calculemos \(np\left(\left(\left(p \lor q\right) \rightarrow r\right) \leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right)\right)\)
+\begin{align*}
+    np\left(\left(\left(p \lor q\right) \rightarrow r\right) \leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right)\right) &= &\text{Aplicamos }
+\end{align*}
 \end{document}
