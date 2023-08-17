@@ -171,6 +171,77 @@ El conjunto de expresiones o fórmulas atómicas, denotado como \texttt{ATOM} co
     VarP &::= p_{1} \ | \ p_{2} \ | \ \dotsc \ | \ p_{n} \ | \ \dotsc  \\
     \varphi, \psi &::= VarP \ | \ \top \ | \ \bot \ | \ \left(\neg \varphi\right)  \ | \ \left(\varphi \land \psi \right) \ | \ \left(\varphi \lor \psi \right)  \ | \ \left(\varphi \rightarrow \psi \right)  \ | \ \left(\varphi \leftrightarrow \psi \right)  \ |
 \end{align*}
+\subsubsection{¿Cómo construimos proposiciones a través de la gramática anterior?}
+\noindent
+Veamos cómo construir \(\left(p \land q\right) \rightarrow \left(\left(\neg q \right) \lor s\right)\)
+\begin{align*}
+    \varphi &\rightarrow \psi \\
+    \left(\varphi_{1} \land \psi_{1} \right) &\rightarrow \psi \\
+    \left(\varphi_{1} \land \psi_{1} \right) &\rightarrow \left(\varphi_{2} \lor \psi_{2} \right) \\
+    \left(\varphi_{1} \land \psi_{1} \right) &\rightarrow \left(\left(\neg \varphi_{2}\right) \lor \psi_{2} \right) \\
+    \left(VarP_{\varphi_{1}} \land VarP_{\psi_{1}} \right) &\rightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \lor VarP_{\psi_{2}} \right) \\
+    \left(p \land VarP_{\psi_{1}} \right) &\rightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \lor VarP_{\psi_{2}} \right) \\
+    \left(p \land q \right) &\rightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \lor VarP_{\psi_{2}} \right) \\
+    \left(p \land q \right) &\rightarrow \left(\left(\neg q\right) \lor VarP_{\psi_{2}} \right) \\
+    \left(p \land q \right) &\rightarrow \left(\left(\neg q\right) \lor s \right)
+\end{align*}
+Veamos cómo construir \(\left(\left(p \lor q\right) \rightarrow r\right) \leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg\left(p \lor q\right)\right) \right)\)
+\begin{align*}
+    \varphi &\leftrightarrow \psi \\
+    \left(\varphi_{1} \rightarrow \psi_{1} \right) &\leftrightarrow \psi \\
+    \left(\varphi_{1} \rightarrow \psi_{1} \right) &\leftrightarrow \left(\varphi_{2} \rightarrow \psi_{2} \right) \\
+    \left(\left(\varphi_{3} \lor \psi_{3} \right) \rightarrow \psi_{1} \right) &\leftrightarrow \left(\varphi_{2} \rightarrow \psi_{2} \right) \\
+    \left(\left(\varphi_{3} \lor \psi_{3} \right) \rightarrow \psi_{1} \right) &\leftrightarrow \left(\left(\neg \varphi_{2}\right) \rightarrow \psi_{2} \right) \\
+    \left(\left(\varphi_{3} \lor \psi_{3} \right) \rightarrow \psi_{1} \right) &\leftrightarrow \left(\left(\neg \varphi_{2}\right) \rightarrow \left(\neg \psi_{2}\right) \right) \\
+    \left(\left(\varphi_{3} \lor \psi_{3} \right) \rightarrow \psi_{1} \right) &\leftrightarrow \left(\left(\neg \varphi_{2}\right) \rightarrow \left(\neg \left(\varphi_{4} \lor \psi_{4}\right)\right) \right) \\
+    \left(\left(VarP_{\varphi_{3}} \lor VarP_{\psi_{3}} \right) \rightarrow VarP_{\psi_{1}} \right) &\leftrightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \rightarrow \left(\neg \left(VarP_{\varphi_{4}} \lor VarP_{\psi_{4}}\right)\right) \right) \\
+    \left(\left(p \lor VarP_{\psi_{3}} \right) \rightarrow VarP_{\psi_{1}} \right) &\leftrightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \rightarrow \left(\neg \left(VarP_{\varphi_{4}} \lor VarP_{\psi_{4}}\right)\right) \right) \\
+    \left(\left(p \lor q \right) \rightarrow VarP_{\psi_{1}} \right) &\leftrightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \rightarrow \left(\neg \left(VarP_{\varphi_{4}} \lor VarP_{\psi_{4}}\right)\right) \right) \\
+    \left(\left(p \lor q \right) \rightarrow r \right) &\leftrightarrow \left(\left(\neg VarP_{\varphi_{2}}\right) \rightarrow \left(\neg \left(VarP_{\varphi_{4}} \lor VarP_{\psi_{4}}\right)\right) \right) \\
+    \left(\left(p \lor q \right) \rightarrow r \right) &\leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg \left(VarP_{\varphi_{4}} \lor VarP_{\psi_{4}}\right)\right) \right) \\
+    \left(\left(p \lor q \right) \rightarrow r \right) &\leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg \left(p \lor VarP_{\psi_{4}}\right)\right) \right) \\
+    \left(\left(p \lor q \right) \rightarrow r \right) &\leftrightarrow \left(\left(\neg r\right) \rightarrow \left(\neg \left(p \lor q\right)\right) \right)
+\end{align*}
+Veamos cómo construir \(\neg\left(\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q\right) \land q\right)\right)\)
+\begin{align*}
+    \neg&\left(\varphi\right) \\
+    \neg&\left(\left(\varphi_{1} \land \psi_{1}\right)\right) \\
+    \neg&\left(\left(\left(\varphi_{2} \land \psi_{2}\right) \land \psi_{1}\right)\right) \\
+    \neg&\left(\left(\left(\left(\varphi_{3} \land \psi_{3}\right) \land \psi_{2}\right) \land \psi_{1}\right)\right) \\
+    \neg&\left(\left(\left(\left(\varphi_{3} \land \left(\varphi_{4} \lor \psi_{4}\right)\right) \land \psi_{2}\right) \land \psi_{1}\right)\right) \\
+    \neg&\left(\left(\left(\left(\varphi_{3} \land \left(\varphi_{4} \lor \left(\neg \psi_{4}\right)\right)\right) \land \psi_{2}\right) \land \psi_{1}\right)\right) \\
+    \neg&\left(\left(\left(\left(VarP_{\varphi_{3}} \land \left(VarP_{\varphi_{4}} \lor \left(\neg VarP_{\psi_{4}}\right)\right)\right) \land VarP_{\psi_{2}}\right) \land VarP_{\psi_{1}}\right)\right) \\
+    \neg&\left(\left(\left(\left(p \land \left(VarP_{\varphi_{4}} \lor \left(\neg VarP_{\psi_{4}}\right)\right)\right) \land VarP_{\psi_{2}}\right) \land VarP_{\psi_{1}}\right)\right) \\
+    \neg&\left(\left(\left(\left(p \land \left(p \lor \left(\neg VarP_{\psi_{4}}\right)\right)\right) \land VarP_{\psi_{2}}\right) \land VarP_{\psi_{1}}\right)\right) \\
+    \neg&\left(\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land VarP_{\psi_{2}}\right) \land VarP_{\psi_{1}}\right)\right) \\
+    \neg&\left(\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q\right) \land VarP_{\psi_{1}}\right)\right) \\
+    \neg&\left(\left(\left(\left(p \land \left(p \lor \left(\neg q\right)\right)\right) \land q\right) \land q\right)\right)
+\end{align*}
+Veamos cómo construir \(\left(\neg s\right) \rightarrow \left(\left(\neg t\right) \land \neg \left(p \lor q\right) \right)\)
+\begin{align*}
+    (\varphi & \rightarrow \psi) \\
+    ((\neg \varphi) & \rightarrow \psi) \\
+    ((\neg \varphi) &\rightarrow (\varphi_{1} \land \psi_{1})) \\
+    ((\neg \varphi) &\rightarrow ((\neg \varphi_{1}) \land \psi_{1})) \\
+    ((\neg \varphi) &\rightarrow ((\neg \varphi_{1}) \land (\neg \psi_{1}))) \\
+    ((\neg \varphi) &\rightarrow ((\neg \varphi_{1}) \land (\neg (\varphi_{2} \lor \psi_{2})))) \\
+    ((\neg VarP_{\varphi}) &\rightarrow ((\neg VarP_{\varphi_{1}}) \land (\neg (VarP_{\varphi_{2}} \lor VarP_{\psi_{2}})))) \\
+    ((\neg s) &\rightarrow ((\neg VarP_{\varphi_{1}}) \land (\neg (VarP_{\varphi_{2}} \lor VarP_{\psi_{2}})))) \\
+    ((\neg s) &\rightarrow ((\neg t) \land (\neg (VarP_{\varphi_{2}} \lor VarP_{\psi_{2}})))) \\
+    ((\neg s) &\rightarrow ((\neg t) \land (p \lor q)))) \\
+\end{align*}
+\subsubsection{Ejercicios}
+Realizar las siguientes construcciones:
+\begin{itemize}
+    \item \(\left(s \lor r\right) \land \left(p \rightarrow \left(p \rightarrow \neg \left(q \land \left(s \lor q\right)\right)\right)\right)\)
+    \item \(\left(\left(\neg \left(r \rightarrow t\right)\right) \leftrightarrow \left(\left(t \land \left(p \rightarrow \left(q \lor t\right)\right)\right) \leftrightarrow s \right)\right)\)
+    \item \(\left(\left(p \rightarrow \left(q \leftrightarrow \left(s \land \left(t \rightarrow q\right)\right)\right)\right)\land \left(q \lor \left(s \lor \left(t \leftrightarrow \left(q \lor \left(\neg r\right)\right)\right)\right)\right) \right)\)
+\end{itemize}
+% \begin{align*}
+%     VarP_{}
+%     \left(\varphi &\rightarrow \psi \right) \\ 
+%     \left(\left(\neg \varphi\right) & \rightarrow \psi \right) \\
+% \end{align*}
 \subsection{Precedencia y asociatividad de los operadores lógicos}
 Precedencia de mayor a menor
 \begin{itemize}
@@ -244,7 +315,11 @@ Veamos \(\left(\neg s\right) \rightarrow \left(\left(\neg t\right) \land \neg \l
 \end{align*}
 \subsubsection{Ejercicio}
 \noindent
-Elimina los paréntesis innecesarios de la expresión \(\left(p \rightarrow \left(q \land \left(\neg q\right)\right)\right) \rightarrow \left(\left(\neg p\right) \rightarrow p\right)\)
+Elimina los paréntesis innecesarios de la expresiones:
+\begin{itemize}
+    \item \(\left(p \rightarrow \left(q \land \left(\neg q\right)\right)\right) \rightarrow \left(\left(\neg p\right) \rightarrow p\right)\)
+    \item \(\left(s \lor r\right) \land \left(p \rightarrow \left(p \rightarrow \neg \left(q \land \left(s \lor q\right)\right)\right)\right)\)
+\end{itemize}
 \section{Definiciones Recursivas y el Principio de Inducción}
 \subsection{¿En qué consiste?}
 \noindent
