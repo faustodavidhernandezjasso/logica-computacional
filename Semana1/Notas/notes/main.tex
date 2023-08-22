@@ -573,10 +573,110 @@ Demostrar mediante inducción estructural que se cumplen la siguiente desigualda
     \]
     Por lo tanto se cumple la propiedad.
 \end{proof}
-\subsubsection{Ejercicio}
+\subsubsection{Ejercicios}
 \noindent
-Demuestra mediante inducción estructural que se cumpla lo siguiente:
-\[
-    con\left(\varphi\right) < 2^{depth\left(\varphi\right)}
-\]
+\begin{itemize}
+    \item Demuestra mediante inducción estructural que se cumpla lo siguiente:
+    \[
+        con\left(\varphi\right) < 2^{depth\left(\varphi\right)}
+    \]
+    \item Prueba que cualquier fórmula proposicional \(\psi\) que tienen únicamente disyunciones
+    es verdadera si alguna de sus variables proposicionales es verdadera.
+\end{itemize}
+\subsubsection{Demostración del ejercicio 2}
+\begin{proof}
+    La demostración se hará por \textbf{Inducción Matemática} sobre el número de variables proposicionales.
+    \newline
+    \textbf{Caso base}
+    \newline
+    \(n = 2\)
+    \newline 
+    Sea \(\psi\) una fórmula proposicional con únicamente disyunciones, entonces podemos definir 
+    a \(\psi\) como sigue:
+    \[
+        \varphi \lor \gamma
+    \]
+    con \(\varphi, \gamma \in \text{\texttt{PROP}}\).
+    \newline 
+    Como \(\psi \equiv \top\) entonces, tenemos que se cumplieron alguno de los siguientes tres
+    casos:
+    \begin{itemize}
+        \item \(\varphi \equiv \top\) y \(\gamma \equiv \bot\).
+        \item \(\varphi \equiv \bot\) y \(\gamma \equiv \top\).
+        \item \(\varphi \equiv \top\) y \(\gamma \equiv \top\).
+    \end{itemize}
+    Lo anterior por la \textbf{tabla de verdad} del operador lógico \(\lor\), así al menos una variable 
+    proposicional es verdadera, por lo tanto se cumple la propiedad.
+    \newline 
+    \textbf{Hipótesis de Inducción}
+    \newline 
+    Sea \(\psi\) una fórmula proposicional con \(n\) variables proposicionales y la cual consiste
+    de puras disyunciones además \(\psi\) es verdadera, entonces alguna de sus variables proposicionales es
+    verdadera.
+    \newline 
+    \textbf{Paso Inductivo}
+    \newline
+    Sea \(\psi'\) una fórmula proposicional con \(n + 1\) variables proposicionales tal que 
+    \(\psi' \equiv \top\), entonces podemos reescribir a \(\psi'\) como sigue:
+    \[
+        \psi \lor \gamma  
+    \]
+    tal que \(\psi\) consiste en \(n\) variables proposicionales.
+    \newline 
+    Tenemos dos casos
+    \newline 
+    Caso (1)
+    \newline 
+    Sí \(\psi \equiv \top\) entonces se cumple la \textbf{hipótesis de inducción} y 
+    al menos alguna de las variables proposicionales es verdadera.
+    \newline 
+    Caso (2)
+    \newline 
+    Sí no se cumple que \(\psi \equiv \top\), entonces por las propiedades del operador \(\lor\),
+    \(\gamma\) es verdadera y se cumple que al menos alguna de las variables proposicionales
+    es verdadera. 
+    \newline 
+    Caso (3)
+    \newline 
+    \(\psi \equiv \top\) y \(\gamma \equiv \top\) entonces se sigue el resultado por los casos 
+    anteriores.
+    \newline 
+    Por lo tanto se cumple la propiedad.
+\end{proof}
+\section{Sustitución}
+\subsection{Definición}
+\noindent
+En una fórmula dada \(\varphi\), una variable proposicional \(p\) cambia o se reemplaza por una
+fórmula \(\psi\). Así generamos una nueva fórmula denotada \(\varphi \left[p \ := \ \psi\right]\)
+obtenida al sustituir todas las presencias de \(p\) en \(\varphi\) por \(\psi\).
+\newpage
+\subsection{Definición recursiva}
+\begin{align*}
+    p\left[p \ := \ \psi \right] &= \psi \\
+    q\left[p \ := \ \psi \right] &= q \\
+    \top\left[p \ := \ \psi \right] &= \top \\
+    \bot\left[p \ := \ \psi \right] &= \bot \\
+    \left(\neg \varphi\right)\left[p \ := \ \psi \right] &= \neg \left(\varphi\left[p \ := \ \psi \right]\right) \\
+    \left(\varphi \land \gamma \right)\left[p \ := \ \psi \right] &= \left(\varphi\left[p \ := \ \psi \right] \land \gamma\left[p \ := \ \psi \right]\right) \\
+    \left(\varphi \lor \gamma \right)\left[p \ := \ \psi \right] &= \left(\varphi\left[p \ := \ \psi \right] \lor \gamma\left[p \ := \ \psi \right]\right) \\
+    \left(\varphi \rightarrow \gamma \right)\left[p \ := \ \psi \right] &= \left(\varphi\left[p \ := \ \psi \right] \rightarrow \gamma\left[p \ := \ \psi \right]\right) \\
+    \left(\varphi \leftrightarrow \gamma \right)\left[p \ := \ \psi \right] &= \left(\varphi\left[p \ := \ \psi \right] \leftrightarrow \gamma\left[p \ := \ \psi \right]\right) \\
+\end{align*}
+\subsection{Sustitución simultánea}
+\noindent
+Sustitución simultánea de \(n\) variables proposicionales por \(n\) fórmulas, detoda como 
+\(\varphi\left[\vec{p} \ := \ \vec{\psi}\right]\).
+\subsection{Propiedades}
+\begin{itemize}
+    \item Si \(p\) no figura en \(\varphi\), es decir \(p \notin vars\left(\varphi\right)\), entonces
+    \(\varphi \left[p \ := \ \psi\right] = \varphi\).
+    \item Si \(p \neq q\) y \(p\) no figura en \(\gamma\) entonces
+    \[
+        \varphi\left[p \ := \ \psi\right]\left[q \ := \ \gamma\right] = \varphi\left[q \ := \ \gamma\right]\left[p \ := \ \psi\left[q \ := \ \gamma\right]\right]
+    \]
+    \item Si \(p \neq q_{1}, \dotsc, q_{n}\) y \(p\) no figura en \(\psi_{1}, \dotsc, \psi_{n}\) entonces
+    \[
+        \varphi\left[\vec{q}, p \ := \ \vec{\psi}, \gamma\right] = \varphi\left[\vec{q} \ := \ \vec{\psi}\right]\left[p \ := \ \gamma\right]
+    \]
+\end{itemize}
 \end{document}
