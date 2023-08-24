@@ -452,7 +452,7 @@ Define una función \(depth\left(\varphi\right)\) que devuelve la altura del ár
 \]
 \textbf{Definición}
 \begin{align*}
-    depth(\varphi) &= 0 &\text{Si \(\varphi \in\)\texttt{PROP}} \\
+    depth(\varphi) &= 0 &\text{Si \(\varphi \in\)\texttt{ATOM}} \\
     depth(\neg \varphi) &= 1 + depth(\varphi) & \\
     depth(\varphi \star \psi) &= 1 + \max{(depth(\varphi), depth(\psi))} &
 \end{align*}
@@ -495,6 +495,14 @@ Demostrar mediante inducción estructural que se cumplen la siguiente desigualda
     Consecuentemente
     \[
         atom\left(\varphi\right) \leq  2 \cdot con\left(\varphi\right) 
+    \]
+    Trivialmente
+    \[
+        2 \cdot con\left(\varphi\right) < 2 \cdot con\left(\varphi\right) + 1
+    \]
+    Por lo tanto 
+    \[
+        atom\left(\varphi\right)  \leq 2 \cdot con\left(\varphi\right) + 1
     \]
     \textbf{Hipótesis de Inducción}
     \newline 
