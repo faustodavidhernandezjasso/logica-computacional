@@ -379,7 +379,7 @@ Define las siguientes funciones, indicando dominio y contradominio de la funció
 \noindent
 Recordemos que los conectivos son:
 \[
-    \{\neg, \land, \lor, \rightarrow, \Leftrightarrow\}  
+    \{\neg, \land, \lor, \rightarrow, \leftrightarrow\}  
 \]
 Así tenemos que la correspondencia de nuestra función es:
 \[
@@ -389,7 +389,7 @@ Definición de la función
 \begin{align*}
     con\left(\varphi\right) &= 0 &\text{Sí \(\varphi \in\) \texttt{ATOM}} \\
     con\left(\neg \varphi\right) &= 1 + con\left(\varphi\right) & \\
-    con\left(\varphi \star \psi \right) &= 1 + con\left(\varphi\right) + cons\left(\psi\right) & \text{con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\)} \\
+    con\left(\varphi \star \psi \right) &= 1 + con\left(\varphi\right) + cons\left(\psi\right) & \text{con \(\star \in \{ \land, \lor, \rightarrow, \leftrightarrow \}\)} \\
 \end{align*}
 Hacemos la observación que \(\varphi\) y \(\psi\) pueden contener o no paréntesis es decir ambas pueden ser de la forma:
 \[
@@ -407,9 +407,10 @@ Tenemos que la correspondencia de nuestra función es:
 \]
 Definición de la función
 \begin{align*}
+    vars\left(\varphi\right) &= \varnothing &\text{Sí \(\varphi \in \left\{\bot, \top\right\}\)} \\
     vars\left(\varphi\right) &= \{ \varphi \} &\text{Sí \(\varphi \in\) \texttt{ATOM\(\setminus \left\{\bot, \top\right\}\)}} \\
     vars\left(\neg \varphi\right) &= vars\left(\varphi\right) & \\
-    vars\left(\varphi \star \psi \right) &= vars\left(\varphi\right) \cup vars\left(\psi\right) & \text{con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\)} \\
+    vars\left(\varphi \star \psi \right) &= vars\left(\varphi\right) \cup vars\left(\psi\right) & \text{con \(\star \in \{ \land, \lor, \rightarrow, \leftrightarrow \}\)} \\
 \end{align*}
 Hacemos la observación que \(\varphi\) y \(\psi\) pueden contener o no paréntesis es decir ambas pueden ser de la forma:
 \[
@@ -430,20 +431,31 @@ Definición de la función
 \begin{align*}
     atom\left(\varphi\right) &= 1 &\text{Sí \(\varphi \in\) \texttt{ATOM}} \\
     atom\left(\neg \varphi\right) &= atom\left(\varphi\right) & \\
-    atom\left(\varphi \star \psi \right) &= atom\left(\varphi\right) + atom\left(\psi\right) & \text{con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\)} \\
+    atom\left(\varphi \star \psi \right) &= atom\left(\varphi\right) + atom\left(\psi\right) & \text{con \(\star \in \{\land, \lor, \rightarrow, \leftrightarrow \}\)} \\
 \end{align*}
 Hacemos la observación que \(\varphi\) y \(\psi\) pueden contener o no paréntesis es decir ambas pueden ser de la forma:
 \[
     \left(\kappa \star \omega \right)  
 \]
-con \(\star \in \{ \neg, \land, \lor, \rightarrow, \Leftrightarrow \}\) ó
+con \(\star \in \{ \land, \lor, \rightarrow, \leftrightarrow \}\) ó
 \[
     \left(\neg \gamma\right)
 \]
 Para \(\kappa, \omega, \gamma \in \text{\texttt{PROP}}\).
 \subsubsection{Ejercicio}
 \noindent
-Define una función \(depth\left(\varphi\right)\) que devuelve la altura del árbol de análisis sintáctico de \(\varphi\).
+Define una función \(depth\left(\varphi\right)\) que devuelve la altura del árbol de sintaxis abstracta de \(\varphi\).
+\subsubsection{Solución}
+\textbf{Dominio}
+\[
+    depth \ : \ \text{\texttt{PROP}} \to \mathbb{N}
+\]
+\textbf{Definición}
+\begin{align*}
+    depth(\varphi) &= 0 &\text{Si \(\varphi \in\)\texttt{PROP}} \\
+    depth(\neg \varphi) &= 1 + depth(\varphi) & \\
+    depth(\varphi \star \psi) &= 1 + \max{(depth(\varphi), depth(\psi))} &
+\end{align*}
 \subsection{Principio de Inducción Estructural para \texttt{PROP}}
 \noindent
 Sea \(\mathcal{P}\) una propiedad acerca de fórmulas del lenguaje \texttt{PROP}. Para probar que toda fórmula 
@@ -649,7 +661,6 @@ Demostrar mediante inducción estructural que se cumplen la siguiente desigualda
 En una fórmula dada \(\varphi\), una variable proposicional \(p\) cambia o se reemplaza por una
 fórmula \(\psi\). Así generamos una nueva fórmula denotada \(\varphi \left[p \ := \ \psi\right]\)
 obtenida al sustituir todas las presencias de \(p\) en \(\varphi\) por \(\psi\).
-\newpage
 \subsection{Definición recursiva}
 \begin{align*}
     p\left[p \ := \ \psi \right] &= \psi \\
@@ -679,7 +690,4 @@ Sustitución simultánea de \(n\) variables proposicionales por \(n\) fórmulas,
         \varphi\left[\vec{q}, p \ := \ \vec{\psi}, \gamma\right] = \varphi\left[\vec{q} \ := \ \vec{\psi}\right]\left[p \ := \ \gamma\right]
     \]
 \end{itemize}
-\section{Apéndice}
-\subsection{Árbol de Sintaxis Abstracta}
-
 \end{document}
