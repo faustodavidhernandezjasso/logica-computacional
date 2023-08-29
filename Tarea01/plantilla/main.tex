@@ -1,0 +1,138 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\newcommand{\pow}[2]{#1^{#2}}
+\newcommand{\supra}[1]{\textsuperscript{#1}}
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+\footnotesize
+Fausto David Hernández Jasso \hfill\\   
+@FaustoJH \hfill\\
+fausto.david.hernandez.jasso@ciencias.unam.mx
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+Lógica Computacional I\\ 
+\normalsize 
+Tarea 01\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+\section{Ejercicio 1}
+\noindent
+Para las siguientes fórmulas
+\begin{align*}
+    & \left(r \lor p \lor q\right) \land \left(q \rightarrow p \rightarrow \neg q\right) \land \neg p
+    & \left(\neg p \lor q \lor r \leftrightarrow \neg s \land p\right) \rightarrow q \lor \neg p
+\end{align*}
+\begin{itemize}
+    \item Muestra el \textbf{árbol de sintaxis abstracta} para identificar el conectivo principal.
+    \item Restaura todos los paréntesis.
+\end{itemize}
+\subsection{Árbol de Sintaxis Abstracta}
+\subsubsection{\(\left(r \lor p \lor q\right) \land \left(q \rightarrow p \rightarrow \neg q\right) \land \neg p\)}
+    \begin{tikzpicture}[
+        tlabel/.style={pos=0.4,right=-1pt,font=\footnotesize\color{red!70!black}},
+        level 1/.style={sibling distance=3cm},
+        level 2/.style={sibling distance=1.2cm}, 
+        level 3/.style={sibling distance=1cm}, 
+        level distance=2cm,
+    ]
+    \node{\(\land\)}
+    child {node {\(\lor\)}
+        child {node {\(r\)}}
+        child {node {\(\lor\)}
+            child {node {\(p\)}}
+            child {node {\(q\)}}}
+    }
+    child {node {\(\land\)}
+        child {node {\(\rightarrow\)} 
+            child {node {\(q\)}}
+            child {node {\(\rightarrow\)}
+                child {node {\(p\)}}
+                child {node {\(\neg\)} 
+                    child {node {\(r\)}}}}}
+        child {node {\(\neg\)}
+            child {node {\(p\)}}}};
+    \end{tikzpicture}
+\subsubsection{\(\left(\neg p \lor q \lor r \leftrightarrow \neg s \land p\right) \rightarrow q \lor \neg p\)}
+    \begin{tikzpicture}[
+        tlabel/.style={pos=0.4,right=-1pt,font=\footnotesize\color{red!70!black}},
+        level 1/.style={sibling distance=3cm},
+        level 2/.style={sibling distance=2.5cm}, 
+        level 3/.style={sibling distance=1.8cm}, 
+        level 4/.style={sibling distance=1cm}, 
+        level distance=2cm,
+    ]
+        \node{\(\lor\)}
+        child {
+            node {\(\rightarrow\)}
+            child {
+                node {\(\leftrightarrow\)}
+                child {
+                    node {\(\lor\)}
+                    child {
+                        node {\(\neg\)}
+                        child {
+                            node {\(p\)}
+                        }
+                    }
+                    child {
+                        node {\(\lor\)}
+                        child {
+                            node {\(q\)}
+                        }
+                        child {
+                            node {\(r\)}
+                        }
+                    }
+                }
+                child {
+                    node {\(\lor\)}
+                    child {
+                        node {\(\neg\)}
+                        child {
+                            node {\(s\)}
+                        }
+                    }
+                    child {
+                        node {\(p\)}
+                    }
+                }
+            }
+            child {
+                node {\(p\)}
+            }}
+        child {
+            node {\(\neg\)}
+            child {
+                node {\(p\)}
+            }
+        };
+    \end{tikzpicture}
+    \subsubsection{Restaura todos los paréntesis}
+    Veamos \(\left(r \lor p \lor q\right) \land \left(q \rightarrow p \rightarrow \neg q\right) \land \neg p\)
+    \begin{align*}
+        \left(r \lor p \lor q\right) &\land \left(q \rightarrow p \rightarrow \neg q\right) \land \neg p & \text{} \\
+        \left(r \lor p \lor q\right) &\land \left(q \rightarrow p \rightarrow \left(\neg q\right)\right) \land \left(\neg p\right) & \text{Iniciamos con \(\neg\)} \\
+        \left(r \lor \left(p \lor q\right)\right) &\land \left(q \rightarrow p \rightarrow \left(\neg q\right)\right) \land \left(\neg p\right) & \text{Iniciamos con \(\lor\)} \\
+        \left(r \lor \left(p \lor q\right)\right) &\land \left(\left(q \rightarrow p \rightarrow \left(\neg q\right)\right) \land \left(\neg p\right)\right) & \text{Iniciamos con \(\land\)} \\
+        \left(r \lor \left(p \lor q\right)\right) &\land \left(\left(q \rightarrow \left(p \rightarrow \left(\neg q\right)\right)\right) \land \left(\neg p\right)\right) & \text{Iniciamos con \(\rightarrow\)} \\
+    \end{align*}
+    Veamos \(\left(\neg p \lor q \lor r \leftrightarrow \neg s \land p\right) \rightarrow q \lor \neg p\)
+    \begin{align*}
+        \left(\neg p \lor q \lor r \leftrightarrow \neg s \land p\right) \rightarrow q \lor \neg p 
+    \end{align*}
+\end{document}
