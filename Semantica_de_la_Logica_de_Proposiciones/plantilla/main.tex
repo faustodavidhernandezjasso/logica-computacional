@@ -1,0 +1,142 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\newcommand{\pow}[2]{#1^{#2}}
+\newcommand{\supra}[1]{\textsuperscript{#1}}
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.35\textwidth} 
+\raggedright
+\footnotesize
+Fausto David Hernández Jasso \hfill\\   
+@FaustoJH \hfill\\
+fausto.david.hernandez.jasso@ciencias.unam.mx
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+Lógica Computacional I\\ 
+\normalsize 
+Semántica de la Lógica de Proposiciones\\ 
+\end{minipage}
+\begin{minipage}{0.24\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+\section{Significado de los conectivos lógicos}
+\subsection{Negación}
+\begin{itemize}
+    \item Símbolo utilizado:  $\lnot$ 
+    \item Correspondencia con el español: \textbf{No}, no es cierto que, es falso que, 
+     etc.
+    \item Otros símbolos: $\sim \varphi, \ \overline{\varphi}$. 
+\end{itemize}
+\subsubsection{Tabla de verdad}
+\begin{center}
+    \begin{tabular}{cc}
+    $\varphi$ & $\neg \varphi$\\
+    \midrule
+    1 & 0 \\
+    0 & 1
+    \end{tabular}
+\end{center}
+\subsection{Disyunción}
+\subsubsection{Descripción}
+\noindent
+La \textbf{disyunción} de las fórmulas $\varphi,\psi$ es la fórmula
+$\varphi \lor \psi$. 
+\newline
+Las fórmulas $\varphi,\psi$ se llaman \textbf{disyuntos}.
+\begin{itemize}
+    \item Símbolo utilizado:  $\lor$ 
+    \item Correspondencia con el español: ó.
+    \item Otros símbolos: \(\varphi + \psi, \varphi \ | \ \psi\).
+\end{itemize}
+\subsubsection{Tabla de verdad}
+\begin{center}
+    \begin{tabular}{ccc}
+    $\varphi$ & \(\psi\) & $\varphi \lor \psi$\\
+    \midrule
+    1 & 1 & 1 \\
+    1 & 0 & 1 \\
+    0 & 1 & 1 \\
+    0 & 0 & 0 \\
+    \end{tabular}
+\end{center}
+\subsection{Conjunción}
+\subsubsection{Descripción}
+La \textbf{conjunción} de las fórmulas $\varphi,\psi$ es la fórmula
+$\varphi \land \psi$. Las fórmulas $\varphi ,\psi$ se llaman 
+\textbf{conyuntos}.
+\begin{itemize}
+    \item Símbolo utilizado: \(\land\)
+    \item Correspondencia con el español: y, pero
+    \item Otros símbolos: \(\varphi \land \psi\), \(\varphi \cdot \psi\) ó \(\varphi \psi\)
+\end{itemize}
+\subsubsection{Tabla de verdad}
+\begin{center}
+    \begin{tabular}{ccc}
+    $\varphi$ & \(\psi\) & $\varphi \land \psi$\\
+    \midrule
+    1 & 1 & 1 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 0 \\
+    \end{tabular}
+\end{center}
+\subsection{Implicación}
+\subsubsection{Descripción}
+La \textbf{implicación} o \textbf{condicional} de las fórmulas $\varphi ,\psi$ es la 
+fórmula $\varphi \rightarrow \psi$. 
+La fórmula $\varphi $ es el \emph{antecedente}\index{antecedente} y la
+fórmula $\psi$ es el \emph{consecuente} de la implicación. 
+\begin{itemize}
+    \item Símbolo utilizado: \(\rightarrow\)
+    \item Correspondencia con el español: $\varphi \rightarrow \psi$ significa: si $\varphi $
+    entonces $\psi$; $\psi$, si $\varphi $; $\varphi $ sólo si $\psi$; $\varphi $ es 
+    condición suficiente para $\psi$; $\psi$ es condición necesaria para 
+    $\varphi $.
+    \item Otros símbolos: \(\varphi \Rightarrow \psi\), \(\varphi \supset \psi\)
+\end{itemize}
+\subsubsection{Tabla de verdad}
+\begin{center}
+    \begin{tabular}{ccc}
+    $\varphi$ & \(\psi\) & $\varphi \rightarrow  \psi$\\
+    \midrule
+    1 & 1 & 1 \\
+    1 & 0 & 0 \\
+    0 & 1 & 1 \\
+    0 & 0 & 1 \\
+    \end{tabular}
+\end{center}
+\subsection{Doble implicación}
+\subsubsection{Descripción}
+\noindent
+La equivalencia o bicondicional de las fórmulas $\varphi ,\psi$ es la fórmula
+$\varphi \leftrightarrow \psi$. 
+\begin{itemize}
+    \item Símbolo utilizado:  \(\leftrightarrow\)
+    \item Correspondencia con el español: $\varphi$ es equivalente a $\psi$; 
+    $\varphi$ si y sólo si $\psi$; $\varphi$ es condición necesaria y suficiente 
+    para $\psi$.
+    \item Otros símbolos: \(\varphi \Leftrightarrow \psi\), \(\varphi \equiv \psi\)
+\end{itemize}
+\subsubsection{Tabla de verdad}
+\begin{center}
+    \begin{tabular}{ccc}
+    $\varphi$ & \(\psi\) & $\varphi \leftrightarrow \psi$\\
+    \midrule
+    1 & 1 & 1 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1 \\
+    \end{tabular}
+\end{center}
+\end{document}
