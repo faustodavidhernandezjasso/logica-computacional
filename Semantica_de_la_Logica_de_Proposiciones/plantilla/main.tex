@@ -139,4 +139,65 @@ $\varphi \leftrightarrow \psi$.
     0 & 0 & 1 \\
     \end{tabular}
 \end{center}
+\section{Semántica formal de los conectivos}
+\subsection{Semántica formal de los conectivos lógicos}
+\subsubsection{Tipo \texttt{Bool}}
+El tipo de valores booleanos denotado \text{\texttt{Bool}} se define como 
+\text{\texttt{Bool}}$=\{0,1\}$.
+\subsubsection{Estado}
+Un estado o asignación de las variables (proposicionales) es
+una función
+\[
+    \mathcal{I} \ : \ VarP \to \text{\texttt{Bool}}
+\]
+Dadas $n$ variables proposicionales existen $2^n$ estados distintos
+para estas variables. Lo anterior tiene justificación a través del 
+\textbf{principio de la multiplicación}.
+\subsubsection{Interpretación}
+\noindent
+Dado un estado de las variables $\mathcal{I} \ : \ VarP \to \text{\texttt{Bool}}$, 
+definimos la interpretación de las fórmulas con respecto a $\mathcal{I}$ como la función
+$\mathcal{I}^{\star} \ : \ \text{\texttt{PROP}} \to \text{\texttt{Bool}}$ tal que:
+\begin{itemize}
+    \item $\mathcal{I}^{\star}(p)=\mathcal{I}(p)$ para $p\in VarP$, es decir
+    \(\mathcal{I}^{\star}|_{VarP} = \mathcal{I}\)
+    %$\restr{\mathcal{I}^{\star}}{_{VarP}}=\mathcal{I}$.
+    \item $\mathcal{I}^{\star}(\top)=1$
+    \item $\mathcal{I}^{\star}(\bot)=0$
+    \item $\mathcal{I}^{\star}(\lnot\varphi)=1$ sí y solamente sí $\mathcal{I}^{\star}(\varphi)=0$.
+    \item $\mathcal{I}^{\star}(\varphi\land\psi)=1$ sí y solamente sí $\mathcal{I}^{\star}(\varphi)=\mathcal{I}^{\star}(\psi)=1$.
+    \item $\mathcal{I}^{\star}(\varphi\lor\psi)=0$ sí y solamente sí $\mathcal{I}^{\star}(\varphi)=\mathcal{I}^{\star}(\psi)=0$.
+    \item $\mathcal{I}^{\star}(\varphi \rightarrow \psi)=0$ sí y solamente sí $\mathcal{I}^{\star}(\varphi)=1$ \textbf{e}
+      $\mathcal{I}^{\star}(\psi)=0$.
+    \item $\mathcal{I}^{\star}(\varphi \leftrightarrow \psi)=1$ sí y solamente sí $\mathcal{I}^{\star}(\varphi)=\mathcal{I}^{\star}(\psi)$. 
+\end{itemize}
+\subsubsection{Sobrecarga de operadores}
+Obsérvese que dado un estado de las variables $\mathcal{I}$, %(o tambi\'en~$\I_v$), 
+la interpretación~$\mathcal{I}^{\star}$ generada por~$\mathcal{I}$ est\'a determinada de manera 
+\'unica por lo que de ahora en adelante escribiremos simplemente $\mathcal{I}$ en lugar 
+de~$\mathcal{I}^{\star}$.
+\subsection{Lema de coincidencia}
+\noindent
+Sean $\mathcal{I}_1,\mathcal{I}_2 \ : \ VarP \to \text{\texttt{Bool}}$ dos estados que coinciden en las variables 
+proposicionales de la fórmula $\varphi$, es decir 
+$\mathcal{I}_{1}(p)=\mathcal{I}_2(p)$ para toda $p\in vars(\varphi)$.\\
+Entonces $\mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)$.
+\subsection{Estado modificado o actualizado}
+\noindent
+Sean $\mathcal{I}: VarP \to \text{\texttt{Bool}}$ un estado de las variables, $p$ una variable 
+proposicional y $v \in \text{\texttt{Bool}}$. Definimos la actualización de $\mathcal{I}$ en $p$ por 
+$v$, denotado $\mathcal{I}[p/v]$ como sigue:
+\[
+    \mathcal{I}\left[p / v\right]\left(q\right) =
+    \begin{cases}
+        v & \text{si } q = p \\
+        q & \text{si } q \neq p
+    \end{cases}
+\]
+\subsection{Lema de sustitución}
+Sean $\mathcal{I}$ una interpretación, $p$ una variable 
+proposicional y $\psi$ una fórmula tal que $\mathcal{I}^{\star}(\psi) = v$. Entonces
+\[
+    \mathcal{I}\left(\varphi\left[p \ := \ \psi\right]\right) = \mathcal{I}\left[p / v\right]\left(\varphi\right)
+\]
 \end{document}
