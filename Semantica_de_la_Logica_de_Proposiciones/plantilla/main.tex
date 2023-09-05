@@ -200,4 +200,73 @@ proposicional y $\psi$ una fórmula tal que $\mathcal{I}^{\star}(\psi) = v$. Ent
 \[
     \mathcal{I}\left(\varphi\left[p \ := \ \psi\right]\right) = \mathcal{I}\left[p / v\right]\left(\varphi\right)
 \]
+\section{Ejercicios}
+\subsection{Ejercicio 1}
+Defina utilizando los conectivos lógicos vistos en clase el operador
+$\oplus$ (ó exclusivo), cuya propiedad es:
+\[
+    \mathcal{I}\left(\varphi \oplus \psi\right) = 1
+\]
+sí y sólo sí
+\[
+    \mathcal{I}\left(\varphi\right) \neq \mathcal{I}\left(\psi\right)
+\]
+\subsection{Solución}
+Sabemos que 
+\begin{align*}
+    \mathcal{I}\left(\varphi \leftrightarrow \psi\right) &= 1 &\text{sí y sólo sí} \\
+    \mathcal{I}\left(\varphi\right) &= \mathcal{I}\left(\varphi\right)
+\end{align*}
+Entonces por \textbf{contra-positiva} tenemos que
+\begin{align*}
+    \mathcal{I}\left(\varphi \leftrightarrow \psi\right) &= 0 &\text{sí y sólo sí} \\
+    \mathcal{I}\left(\varphi\right) &\neq \mathcal{I}\left(\varphi\right)
+\end{align*}
+Sabemos que 
+\begin{align*}
+    \mathcal{I}\left(\gamma\right) &= 0 &\text{sí y sólo sí} \\
+    \mathcal{I}\left(\neg \gamma\right) &=1 &
+\end{align*}
+Consecuentemente
+\begin{align*}
+    \mathcal{I}\left(\varphi \leftrightarrow \psi\right) &= 0 &\text{sí y sólo sí} \\
+    \mathcal{I}\left(\neg \left(\varphi \leftrightarrow \psi\right)\right) &= 1
+\end{align*}
+Por lo tanto
+\begin{align*}
+    \mathcal{I}\left(\neg \left(\varphi \leftrightarrow \psi\right)\right) &= 1 &\text{sí y sólo sí} \\
+    \mathcal{I}\left(\varphi\right) &\neq \mathcal{I}\left(\varphi\right)    
+\end{align*}
+Podemos concluir que:
+\begin{align*}
+    \neg \left(\varphi \leftrightarrow \psi\right) \equiv \varphi \oplus \psi
+\end{align*}
+Por equivalencias lógicas
+\begin{align*}
+    \neg \left(\varphi \leftrightarrow \psi\right) &\equiv \neg \left(\left(\varphi \rightarrow \psi\right) \land \left( \psi \rightarrow \varphi  \right)\right) &\text{Eliminación de \(\leftrightarrow\)} \\
+                                                   &\equiv  \neg \left(\left(\neg \varphi \lor \psi\right) \land \left( \neg \psi \lor \varphi  \right)\right) &\text{Eliminación de \(\rightarrow\)} \\
+                                                   &\equiv  \neg \left(\neg \varphi \lor \psi\right) \lor \neg \left( \neg \psi \lor \varphi  \right) &\text{De Morgan} \\
+                                                   &\equiv   \left(\neg\neg \varphi \land \neg \psi\right) \lor \left( \neg \neg \psi \land \neg \varphi  \right) &\text{De Morgan} \\
+                                                   &\equiv   \left(\varphi \land \neg \psi\right) \lor \left( \psi \land \neg \varphi  \right) &\text{Doble Negación} \\
+                                                   &\equiv   \left(\varphi \land \neg \psi\right) \lor \left( \neg \varphi \land \psi  \right) &\text{Conmutatividad} \\
+\end{align*}
+Tenemos que
+\[
+    \varphi \oplus \psi \equiv \neg \left(\varphi \leftrightarrow \psi\right) \equiv   \left(\varphi \land \neg \psi\right) \lor \left( \neg \varphi \land \psi  \right)
+\]
+Por transitividad podemos concluir que
+\[
+    \varphi \oplus \psi \equiv \left(\varphi \land \neg \psi\right) \lor \left( \neg \varphi \land \psi  \right)
+\]
+\subsubsection{Tabla de verdad}
+\begin{center}
+    \begin{tabular}{ccc}
+    $\varphi$ & \(\psi\) & $\varphi \oplus \psi$\\
+    \midrule
+    1 & 1 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 1 \\
+    0 & 0 & 0 \\
+    \end{tabular}
+\end{center}
 \end{document}
