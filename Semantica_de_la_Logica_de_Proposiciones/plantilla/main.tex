@@ -200,6 +200,157 @@ proposicional y $\psi$ una fórmula tal que $\mathcal{I}^{\star}(\psi) = v$. Ent
 \[
     \mathcal{I}\left(\varphi\left[p \ := \ \psi\right]\right) = \mathcal{I}\left[p / v\right]\left(\varphi\right)
 \]
+\section{Conceptos Semánticos Básicos}
+\subsection{Tautología}
+Si $\mathcal{I}(\varphi)=1$ para toda interpretación $\mathcal{I}$ decimos que 
+$\varphi$ es una tautología o fórmula válida y escribimos $\models\varphi$.
+\subsection{Satisfacible}
+Si $\mathcal{I}(\varphi)=1$ para alguna interpretación $\mathcal{I}$ decimos que 
+$\varphi$ es satisfacible,  que \(\varphi\) es verdadera en \(\mathcal{I}\) y 
+escribimos $ \mathcal{I} \models\varphi$.
+\subsection{Insatisfacible}
+Si $\mathcal{I}(\varphi)=0$ para alguna interpretación $\mathcal{I}$ decimos que 
+$\varphi$ es insatisfacible o es falsa en \(\mathcal{I}\) y 
+escribimos $ \mathcal{I} \nvDash\varphi$.
+\subsection{Contradicción}
+Si $\mathcal{I}(\varphi)=0$ para toda interpretación $\mathcal{I}$ decimos que 
+$\varphi$ es una contradicción o una fórmula no satisfacible.
+\subsection{Conjunto de fórmulas}
+Sea $\Gamma$ es un conjunto de fórmulas decimos que:
+\begin{itemize}
+    \item $\Gamma$ es satisfacible si tiene un modelo, es decir, si existe una 
+    interpretación $\mathcal{I}$ tal que $\mathcal{I}(\varphi)=1$ para toda 
+    $\varphi\in\Gamma$. Lo cual denotamos a veces, abusando de la notación, 
+    con $\mathcal{I}(\Gamma)=1$.
+    \item $\Gamma$ es insatisfacible o no satisfacible si no tiene un
+    modelo, es decir, si no existe una interpretación $\mathcal{I}$ tal que 
+    $\mathcal{I}(\varphi)=1$ para toda $\varphi\in\Gamma$.
+\end{itemize}
+\subsection{Proposición}
+Sea $\Gamma$ un conjunto de fórmulas, $\varphi \in \Gamma$, $\tau$ una 
+tautología y $\chi$ una contradicción. 
+Si \(\Gamma\) es satisfacible entonces
+\begin{enumerate}
+    \item $\Gamma\setminus\{\varphi\}$ es satisfacible.
+    \item $\Gamma\cup\{\tau\}$ es satisfacible.
+    \item $\Gamma\cup\{\chi\}$ es insatisfacible.
+\end{enumerate}
+Si \(\Gamma\) es insatisfacible, con \(\tau \in \Gamma\) entonces
+\begin{enumerate}
+    \item $\Gamma\cup\{\psi\}$ es insatisfacible, para cualquier \(\psi \in\) \texttt{PROP}.
+    \item $\Gamma\setminus\{\tau\}$ es insatisfacible.
+\end{enumerate}
+Veamos (1)
+\begin{proof}
+    Definimos a \(\Gamma\) como sigue:
+    \[
+        \Gamma = \{
+            \psi_{1}, \psi_{2}, \dotsc, \psi_{n}, \varphi
+        \}  
+    \]
+    Como \(\Gamma\) es satisfacible, entonces existe una interpretación \(\mathcal{I}\) 
+    tal que \(\mathcal{I}\left(\kappa\right) = 1\) para toda \(\kappa \in \Gamma\).
+    \newline 
+    Sea \(\Gamma' = \Gamma \setminus \{\varphi\}\), entonces definimos a \(\mathcal{I}'\)
+    como 
+    \[
+        \mathcal{I}'\left(\kappa\right) = \mathcal{I}\left(\kappa\right)
+    \]
+    Para toda \(\kappa \in \Gamma'\). Por definición de \(\mathcal{I}\) tenemos que
+    \[
+        \mathcal{I}'\left(\kappa\right) = 1
+    \]
+    Para toda \(\kappa \in \mathcal{I}'\). Por lo tanto \(\Gamma'\) es satisfacible
+\end{proof}
+Veamos (2)
+\begin{proof}
+    Definimos a \(\Gamma\) como sigue:
+    \[
+        \Gamma = \{
+            \psi_{1}, \psi_{2}, \dotsc, \psi_{n}, \varphi
+        \}  
+    \]
+    Como \(\Gamma\) es satisfacible, entonces existe una interpretación \(\mathcal{I}\) 
+    tal que \(\mathcal{I}\left(\kappa\right) = 1\) para toda \(\kappa \in \Gamma\).
+    \newline 
+    Sea \(\Gamma' = \Gamma \cup \{\tau\}\), entonces
+    como 
+    \[
+        \mathcal{I}\left(\tau\right) = 1
+    \]
+    ya que \(\tau\) es tautología. Por lo tanto \(\Gamma'\) es satisfacible bajo \(\mathcal{I}\).
+\end{proof}
+Veamos (3)
+\newline
+\begin{proof}
+    Sea \(\Gamma' = \Gamma \cup \{\chi\}\), entonces
+    como 
+    \[
+        \mathcal{I}\left(\chi\right) = 0
+    \]
+    para cualquier interpretación \(\mathcal{I}\), entonces el conjunto \(\Gamma'\) no es satisfacible.
+    Ya que en particular \(\chi\) siempre se evaluará en \(0\).
+\end{proof}
+\newpage
+\subsection{Proposición}
+Sea $\Gamma=\{\varphi_1,\ldots,\varphi_n\}$ un conjunto de fórmulas. 
+\begin{enumerate}
+    \item $\Gamma$ es satisfacible sí y sólo sí $\varphi_1\land\ldots\land\varphi_n$ es
+    satisfacible.
+    \item $\Gamma$ es insatisfacible sí y sólo sí $\varphi_1\land\ldots\land\varphi_n$ es
+    una contradicción.
+\end{enumerate}
+Veamos (1)
+\newline 
+\begin{proof}
+    (Ida)
+    \newline
+    Como \(\Gamma\) es satisfacible, entonces existe una interpretación \(\mathcal{I}\)
+    tal que para toda \(\varphi_{i} \in \Gamma\) con \(1 \leq i \leq n\). Entonces tenemos que 
+    se cumple que:
+    \begin{itemize}
+       \item \(\mathcal{I}\left(\varphi_{1}\right) = 1\) y
+       \item \(\mathcal{I}\left(\varphi_{2}\right) = 1\) y
+       \item ...
+       \item \(\mathcal{I}\left(\varphi_{n}\right) = 1\).
+    \end{itemize}
+    Entonces tenemos que 
+    \[
+        \mathcal{I}\left(\varphi_{1}\right) = \mathcal{I}\left(\varphi_{2}\right) = \dotsc = \mathcal{I}\left(\varphi_{n}\right) = 1
+    \]
+    Consecuentemente
+    \[  
+        \mathcal{I}\left(\varphi_{1} \land \varphi_{2} \land \dotsc \land \varphi_{n}\right) = 1  
+    \]
+    Por lo tanto 
+    \[
+        \varphi_{1} \land \varphi_{2} \land \dotsc \land \varphi_{n}  
+    \]
+    es satisfacible bajo \(\mathcal{I}\).
+    \newline
+    (Vuelta)
+    \newline
+    Como
+    \[
+        \varphi_{1} \land \varphi_{2} \land \dotsc \land \varphi_{n}  
+    \]
+    es satisfacible bajo \(\mathcal{I}\). Entonces
+    \[  
+        \mathcal{I}\left(\varphi_{1} \land \varphi_{2} \land \dotsc \land \varphi_{n}\right) = 1  
+    \]
+    que implica que
+    \[
+        \mathcal{I}\left(\varphi_{1}\right) = \mathcal{I}\left(\varphi_{2}\right) = \dotsc = \mathcal{I}\left(\varphi_{n}\right) = 1
+    \]
+    lo anterior es equivalente a lo siguiente:
+    \begin{itemize}
+        \item \(\mathcal{I}\left(\varphi_{1}\right) = 1\) y
+        \item \(\mathcal{I}\left(\varphi_{2}\right) = 1\) y
+        \item ...
+        \item \(\mathcal{I}\left(\varphi_{n}\right) = 1\).
+     \end{itemize}
+    Por lo tanto tenemos que \(\Gamma\) es satisfacible.
+\end{proof}
 \section{Ejercicios}
 \subsection{Ejercicio 1}
 Defina utilizando los conectivos lógicos vistos en clase el operador
@@ -269,4 +420,27 @@ Por transitividad podemos concluir que
     0 & 0 & 0 \\
     \end{tabular}
 \end{center}
+\subsection{Ejercicio 2}
+Demuestre que si \(\Gamma\) es insatisfacible, con \(\tau \in \Gamma\) entonces
+\begin{enumerate}
+    \item $\Gamma\cup\{\psi\}$ es insatisfacible, para cualquier \(\psi \in\) \texttt{PROP}.
+\end{enumerate}
+\(\tau\) es una \textbf{tautología}.
+\begin{proof}
+    Sea \(\Gamma' = \Gamma \cup \{\psi\}\), entonces
+    como 
+    \[
+        \mathcal{I}\left(\chi\right) = 0
+    \]
+    para alguna \(\chi \in \Gamma\), entonces al agregar \(\psi\), seguirá sin existir una interpretación
+    \(\mathcal{I}\) que haga verdadera tanto a \(\chi\) como a \(\psi\), por lo tanto \(\Gamma'\) es 
+    insatisfacible.
+\end{proof}
+\subsection{Ejercicio 3}
+\noindent
+Sea $\Gamma=\{\varphi_1,\ldots,\varphi_n\}$ un conjunto de fórmulas. Demuestra $\Gamma$ es insatisfacible sí y sólo sí $\varphi_1\land\ldots\land\varphi_n$ es
+una contradicción.
+\begin{proof}
+    Se sigue de la proposición anterior.
+\end{proof}
 \end{document}
