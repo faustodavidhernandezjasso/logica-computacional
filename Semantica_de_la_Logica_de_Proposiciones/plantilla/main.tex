@@ -365,6 +365,45 @@ Entonces $\mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)$.
     \[
         \mathcal{I}_{1}\left(\varphi \to \psi\right) = \mathcal{I}^{\star}_{1}\left(\varphi \to \psi\right) = \mathcal{I}^{\star}_{2}\left(\varphi \to \psi\right) = \mathcal{I}_{2}\left(\varphi \to \psi\right)
     \]
+    Doble Implicación (\(\leftrightarrow\))
+    \newline
+    Entonces por definición de \textbf{interpretación} tenemos que:
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \leftrightarrow \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) \neq \mathcal{I}^{\star}_{1}\left( \psi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \leftrightarrow \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) \neq \mathcal{I}^{\star}_{2}\left( \psi\right)\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \leftrightarrow \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}^{\star}_{1}\left( \psi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \leftrightarrow \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}^{\star}_{2}\left( \psi\right)\)
+    \end{itemize}
+    Aplicando \textbf{hipótesis de inducción} tenemos que:
+    \begin{align*}
+        \mathcal{I}_1(\varphi) &= \mathcal{I}_2(\varphi) \\
+        \mathcal{I}_1(\psi) &= \mathcal{I}_2(\psi)
+    \end{align*}
+    Por la observación que se realizó acerca de la \textbf{sobrecarga de operadores}. Sabemos que 
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = \mathcal{I}_{1}\left(\varphi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = \mathcal{I}_{2}\left(\varphi\right)\)
+    \end{itemize}
+    Así
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \leftrightarrow \psi\right) = 0\) sí y sólo sí 
+        \(\mathcal{I}_{1}\left( \varphi\right) = \mathcal{I}^{\star}_{1}\left( \varphi\right) \neq 
+        \mathcal{I}^{\star}_{1}\left( \psi\right) = \mathcal{I}_{1}\left( \psi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \leftrightarrow \psi\right) = 0\) sí y sólo sí 
+        \(\mathcal{I}_{2}\left( \varphi\right) = \mathcal{I}^{\star}_{2}\left( \varphi\right) \neq 
+        \mathcal{I}^{\star}_{2}\left( \psi\right) = \mathcal{I}_{2}\left( \psi\right)\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \leftrightarrow \psi\right) = 1\) sí y sólo sí 
+        \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}_{1}\left( \varphi\right) 
+        = \mathcal{I}^{\star}_{1}\left( \psi\right) = \mathcal{I}^{\star}\left( \psi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \leftrightarrow \psi\right) = 1\) sí y sólo sí 
+        \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}_{2}\left( \varphi\right) 
+        = \mathcal{I}^{\star}_{2}\left( \psi\right) = \mathcal{I}^{\star}\left( \psi\right)\)
+    \end{itemize}
+    Independientemente del valor de \(\varphi \leftrightarrow \psi\) y aplicando la observación hecha para la \textbf{sobrecarga de operadores} tenemos que:
+    \[
+        \mathcal{I}_{1}\left(\varphi \to \psi\right) = \mathcal{I}^{\star}_{1}\left(\varphi \to \psi\right) = \mathcal{I}^{\star}_{2}\left(\varphi \to \psi\right) = \mathcal{I}_{2}\left(\varphi \to \psi\right)
+    \]
+    Por lo tanto, queda demostrado el lema.
 \end{proof}
 \subsection{Estado modificado o actualizado}
 \noindent

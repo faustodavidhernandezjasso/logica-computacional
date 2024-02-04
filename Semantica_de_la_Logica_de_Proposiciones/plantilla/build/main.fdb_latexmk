@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/main"] 1707017201 "build/main.bcf" "build/main.bbl" "build/main" 1707074124 0
+["biber build/main"] 1707017201 "build/main.bcf" "build/main.bbl" "build/main" 1707080531 0
   "./ecl.bib" 1692853586 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "build/main.bcf" 1707074124 107344 5a52ae481bd48588b1ab466a66e8c3ff "pdflatex"
+  "build/main.bcf" 1707080531 107344 5a52ae481bd48588b1ab466a66e8c3ff "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1707074122 "c:/Users/faust/Documents/Logica_Computacional/logica-computacional/Semantica_de_la_Logica_de_Proposiciones/plantilla/main.tex" "build/main.pdf" "main" 1707074124 0
+["pdflatex"] 1707080530 "c:/Users/faust/Documents/Logica_Computacional/logica-computacional/Semantica_de_la_Logica_de_Proposiciones/plantilla/main.tex" "build/main.pdf" "main" 1707080531 0
   "C:/Users/faust/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1706992727 162602 09e0a1780be476291122a2020f89e47e ""
   "C:/Users/faust/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1689719158 24118871 b4f594084964a40323743f0bbfbd51d7 ""
   "C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -252,13 +252,13 @@
   "C:/Users/faust/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
   "C:/Users/faust/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/faust/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "build/main.aux" 1707074124 5623 73b99358aa76650d021a93d09d4964b4 "pdflatex"
+  "build/main.aux" 1707080531 5623 f72d55b4ad933ff7c78c78a639d9154d "pdflatex"
   "build/main.bbl" 1707017202 486 ee04f40f768daeed26442158e95aba61 "biber build/main"
-  "build/main.out" 1707074124 5457 b0c5bcef84650562865290db05490f7d "pdflatex"
-  "build/main.run.xml" 1707074124 2298 d3ce36a7304073a33186df2fa4c9cbc3 "pdflatex"
-  "c:/Users/faust/Documents/Logica_Computacional/logica-computacional/Semantica_de_la_Logica_de_Proposiciones/plantilla/main.tex" 1707074122 33760 64378f09ee4d4b55abd25c1eec7e3feb ""
+  "build/main.out" 1707080531 5457 b0c5bcef84650562865290db05490f7d "pdflatex"
+  "build/main.run.xml" 1707080531 2298 d3ce36a7304073a33186df2fa4c9cbc3 "pdflatex"
+  "c:/Users/faust/Documents/Logica_Computacional/logica-computacional/Semantica_de_la_Logica_de_Proposiciones/plantilla/main.tex" 1707080529 36945 4fecac0647356af6e0480b273c745561 ""
   "head.tex" 1693865399 2792 da67866cba2ac6acd5a3668166b14daf ""
-  "main.tex" 1707074122 33760 64378f09ee4d4b55abd25c1eec7e3feb ""
+  "main.tex" 1707080529 36945 4fecac0647356af6e0480b273c745561 ""
   "style/avm.sty" 1692853586 5221 cec8bc669a9099a9976655c41e198f2d ""
   "style/btree.sty" 1692853586 4357 1f940af56ec4d6b13bc5f67ae255817c ""
   "style/lstlisting.sty" 1692853586 969 44fc7c305325b375fc1157a6ff8b063e ""
