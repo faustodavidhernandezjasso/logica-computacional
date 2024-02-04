@@ -585,7 +585,7 @@ sí y sólo sí
 \[
     \mathcal{I}\left(\varphi\right) \neq \mathcal{I}\left(\psi\right)
 \]
-\subsection{Solución}
+\subsubsection{Solución}
 Sabemos que 
 \begin{align*}
     \mathcal{I}\left(\varphi \leftrightarrow \psi\right) &= 1 &\text{sí y sólo sí} \\
@@ -666,4 +666,63 @@ una contradicción.
 \begin{proof}
     Se sigue de la proposición anterior.
 \end{proof}
+\subsection{Ejercicio 4}
+Decida si los siguientes conjuntos de proposiciones son satisfacibles por
+medio de interpretaciones:
+\begin{enumerate}
+    \item $\Gamma = \{ p \to q,\; (s \lor p) \land \lnot q,\;\lnot s\}$
+    \item $\Gamma = \{(p \to r) \lor (\lnot s \land p),\; s \to \lnot(p \land r),\; r \lor
+    \lnot s\}$
+    \item $\Gamma = \{p\lor (q\land s),\; (\lnot r \lor s) \land (s\to t),\; \lnot p \lor
+    \lnot
+t \} $
+\end{enumerate}
+\subsubsection{Solución}
+\noindent
+Recordemos la siguiente equivalencia:
+\newline
+$\Gamma$ es satisfacible syss $\varphi_1\land\ldots\land\varphi_n$ es
+satisfacible.
+\newline 
+A su vez sabemos que \(\Gamma\) es satisfacible si tiene un modelo, es decir, si existe una 
+interpretaci\'on tal que $\mathcal{I}(\varphi)=1$ para toda 
+$\varphi\in\Gamma$.
+\newline 
+Veamos (1)
+\newline
+Supongamos que \(\mathcal{I}\left(\Gamma\right) = 1\), lo anterior implica que
+\begin{align*}
+    \mathcal{I} \left(p \to q \right)  &= 1 \\
+    \mathcal{I} \left((s \lor p) \land \lnot q \right) &= 1 \\
+    \mathcal{I} \left(\lnot s\right)  &= 1
+\end{align*}
+Sabemos que \(\mathcal{I} \left(\lnot s\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I} \left(s\right) = 0
+\]
+Sabemos que \(\mathcal{I} \left((s \lor p) \land \lnot q \right) = 1\) sí y sólo sí
+\[
+    \mathcal{I} \left(s \lor p \right) =  \mathcal{I} \left(\lnot q \right) = 1
+\]
+Sabemos que \(\mathcal{I} \left(\lnot q \right) = 1\) sí y sólo sí
+\[
+    \mathcal{I} \left( q \right) = 0
+\]
+Sabemos que \(\mathcal{I} \left(s \lor p \right) = 1\) sí y sólo sí
+\[
+    \mathcal{I} \left(s \right) = 1 \ \text{ó} \ \mathcal{I} \left( p \right) = 1
+\]
+Sin embargo como \(\mathcal{I} \left(s\right) = 0\) entonces tenemos que
+\[
+    \mathcal{I} \left( p \right) = 1
+\]
+Sabemos que \(\mathcal{I} \left(p \to q \right) = 0\) sí y sólo sí
+\begin{align*}
+    \mathcal{I} \left(p\right) &= 1 \\
+    \mathcal{I} \left(q\right) &= 0
+\end{align*}
+Que justamente son las interpretaciones que obtuvimos. Por lo tanto el conjunto \(\Gamma\) no 
+es satisfacible. Notemos que mostramos que para cualquier estado \textit{(para aquellos que hace sentido tomar en cuenta
+por ejemplo no contamos que \(\mathcal{I}\left(s\right) = 1\) ya que automáticamente nos hace que \(\Gamma\) no 
+es satisfacible)} de las variables no se satisface a \(\Gamma\).
 \end{document}
