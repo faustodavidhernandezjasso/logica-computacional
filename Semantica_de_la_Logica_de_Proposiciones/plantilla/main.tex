@@ -142,7 +142,7 @@ $\varphi \leftrightarrow \psi$.
 \section{Semántica formal de los conectivos}
 \subsection{Semántica formal de los conectivos lógicos}
 \subsubsection{Tipo \texttt{Bool}}
-El tipo de valores booleanos denotado \text{\texttt{Bool}} se define como 
+El tipo de valores booleanos denotado como \text{\texttt{Bool}} se define como 
 \text{\texttt{Bool}}$=\{0,1\}$.
 \subsubsection{Estado}
 Un estado o asignación de las variables (proposicionales) es
@@ -152,7 +152,14 @@ una función
 \]
 Dadas $n$ variables proposicionales existen $2^n$ estados distintos
 para estas variables. Lo anterior tiene justificación a través del 
-\textbf{principio de la multiplicación}.
+\textbf{principio de la multiplicación}. Supongamos que tenemos 
+una variable entonces por el \textbf{principio de tercero excluido}, 
+sabemos que sólo puede tener dos valores \(\top\) o \(\bot\). Sí tenemos 
+dos variables cada una a su vez tendrá dos posibles valores los cuales serán
+\(\top\) o \(\bot\), y tendremos cuatro posibles estados cuando ambas sean 
+\(\top\), cuando ambas sean \(\bot\) y cuando alguna sea \(\bot\) y cuando la 
+otra sea \(\top\). Y es por esa razón que cuando tenemos \(n\) variables 
+proposicionales tenemos \(2^{n}\) estados posibles.
 \subsubsection{Interpretación}
 \noindent
 Dado un estado de las variables $\mathcal{I} \ : \ VarP \to \text{\texttt{Bool}}$, 
@@ -182,6 +189,147 @@ Sean $\mathcal{I}_1,\mathcal{I}_2 \ : \ VarP \to \text{\texttt{Bool}}$ dos estad
 proposicionales de la fórmula $\varphi$, es decir 
 $\mathcal{I}_{1}(p)=\mathcal{I}_2(p)$ para toda $p\in vars(\varphi)$.\\
 Entonces $\mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)$.
+\begin{proof}
+    La demostración se hará usando el \textbf{Principio de Inducción Estructural}
+    \newline
+    \textbf{Caso Base}
+    \newline
+    Sea \(\varphi \in \text{\texttt{ATOM}}\), notemos que solamente tenemos un caso ya que la hipótesis sólo 
+    aplica para variables proposicionales y por lo tanto descartamos a las constantes lógicas. 
+    Sean \(\mathcal{I}_{1}, \mathcal{I}_{2}: VarP \to \text{\texttt{Bool}}\) dos estados, por tales que
+    $\mathcal{I}_{1}(p)=\mathcal{I}_2(p)$ para toda $p\in vars(\varphi)$, como \(\varphi\) es una variable
+    proposicional por suposición, entonces se sigue que $\mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)$.
+    \newline
+    \textbf{Hipótesis de Inducción}
+    \newline
+    Sean \(\gamma \in \text{\texttt{PROP}}\) y $\mathcal{I}_1,\mathcal{I}_2 \ : \ VarP \to \text{\texttt{Bool}}$
+    dos estados tales que:
+    \begin{itemize}
+        \item $\mathcal{I}_{1}(p)=\mathcal{I}_2(p)$ para toda $p\in vars(\gamma)$
+    \end{itemize}
+    Entonces 
+    \begin{itemize}
+        \item $\mathcal{I}_1(\gamma)=\mathcal{I}_2(\gamma)$
+    \end{itemize}
+    \textbf{Paso Inductivo}
+    \newline
+    Caso (1)
+    \newline
+    Sea \(\gamma \equiv \neg \varphi\) para alguna \(\varphi \in \text{\texttt{PROP}}\). Sean $\mathcal{I}_1,\mathcal{I}_2 \ : \ VarP \to \text{\texttt{Bool}}$
+    dos estados tales que:
+    \begin{itemize}
+        \item $\mathcal{I}_{1}(p)=\mathcal{I}_2(p)$ para toda $p\in vars(\gamma)$
+    \end{itemize}
+    Definimos a las interpretaciones de la fórmula \(\varphi\) con respecto a \(\mathcal{I}_{1}\) y 
+    \(\mathcal{I}_{2}\) como \(\mathcal{I}^{\star}_{1}\) y como \(\mathcal{I}^{\star}_{2}\) 
+    respectivamente. Entonces por definición de \textbf{interpretación} tenemos que:
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left(\neg \varphi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left(\neg \varphi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left(\neg \varphi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left(\neg \varphi\right) = 0\)
+    \end{itemize}
+    Aplicando \textbf{hipótesis de inducción} tenemos que:
+    \[
+        \mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)
+    \]
+    Por la observación que se realizó acerca de la \textbf{sobrecarga de operadores}. Sabemos que 
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = \mathcal{I}_{1}\left(\varphi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = \mathcal{I}_{2}\left(\varphi\right)\)
+    \end{itemize}
+    Así 
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = 0 = \mathcal{I}_{1}\left(\varphi\right)\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left(\neg \varphi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = 1 = \mathcal{I}_{1}\left(\varphi\right)\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left(\neg \varphi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = 0 = \mathcal{I}_{2}\left(\varphi\right)\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left(\neg \varphi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = 1 = \mathcal{I}_{2}\left(\varphi\right)\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left(\neg \varphi\right) = 0\)
+    \end{itemize}
+    Independientemente del valor de \(\neg \varphi\) y aplicando la observación hecha para la \textbf{sobrecarga de operadores} tenemos que:
+    \[
+        \mathcal{I}_{1}\left(\neg \varphi\right) = \mathcal{I}^{\star}_{1}\left(\neg \varphi\right) = \mathcal{I}^{\star}_{2}\left(\neg \varphi\right) = \mathcal{I}_{2}\left(\neg \varphi\right)
+    \]
+    Caso (2)
+    \newline
+    Sea \(\gamma \equiv \varphi \star \psi \) con \(\varphi, \psi \in \text{\texttt{PROP}}\) y \(\star \in \{\land, \lor, \to, \leftrightarrow\}\). Sean $\mathcal{I}_1,\mathcal{I}_2 \ : \ VarP \to \text{\texttt{Bool}}$
+    dos estados tales que:
+    \begin{itemize}
+        \item $\mathcal{I}_{1}(p)=\mathcal{I}_2(p)$ para toda $p\in vars(\varphi)$
+        \item $\mathcal{I}_{1}(q)=\mathcal{I}_2(q)$ para toda $q\in vars(\psi)$
+    \end{itemize}
+    
+    Definimos a las interpretaciones de la fórmula \(\varphi\) con respecto a \(\mathcal{I}_{1}\) y 
+    \(\mathcal{I}_{2}\) como \(\mathcal{I}^{\star}_{1}\) y como \(\mathcal{I}^{\star}_{2}\) 
+    respectivamente.
+    \newline 
+    Conjunción (\(\land\))
+    \newline
+    Entonces por definición de \textbf{interpretación} tenemos que:
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \land \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}^{\star}_{1}\left( \psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \land \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}^{\star}_{2}\left( \psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \land \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = 0\) ó \(\mathcal{I}^{\star}_{1}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \land \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = 0\) ó \(\mathcal{I}^{\star}_{2}\left( \psi\right) = 0\)
+    \end{itemize}
+    Aplicando \textbf{hipótesis de inducción} tenemos que:
+    \[
+        \mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)
+    \]
+    Por la observación que se realizó acerca de la \textbf{sobrecarga de operadores}. Sabemos que 
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = \mathcal{I}_{1}\left(\varphi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = \mathcal{I}_{2}\left(\varphi\right)\)
+    \end{itemize}
+    Así
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \land \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}_{1}\left( \varphi\right) = \mathcal{I}^{\star}_{1}\left( \psi\right) = \mathcal{I}_{1}\left( \psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \land \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}_{2}\left( \varphi\right) =  \mathcal{I}^{\star}_{2}\left( \psi\right) = \mathcal{I}_{2}\left( \psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \land \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}_{1}\left( \varphi\right) = 0\) ó \(\mathcal{I}^{\star}_{1}\left( \psi\right) = \mathcal{I}_{1}\left( \psi \right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \land \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}_{2}\left( \varphi\right) = 0\) ó \(\mathcal{I}^{\star}_{2}\left( \psi\right) = \mathcal{I}_{2}\left( \psi \right) = 0\) 
+    \end{itemize}
+    Independientemente del valor de \(\varphi \land \psi\) y aplicando la observación hecha para la \textbf{sobrecarga de operadores} tenemos que:
+    \[
+        \mathcal{I}_{1}\left(\varphi \land \psi\right) = \mathcal{I}^{\star}_{1}\left(\varphi \land \psi\right) = \mathcal{I}^{\star}_{2}\left(\varphi \land \psi\right) = \mathcal{I}_{2}\left(\varphi \land \psi\right)
+    \] 
+    Disyunción (\(\lor\))
+    \newline
+    Entonces por definición de \textbf{interpretación} tenemos que:
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \lor \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}^{\star}_{1}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \lor \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}^{\star}_{2}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \lor \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = 1\) ó \(\mathcal{I}^{\star}_{1}\left( \psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \lor \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = 1\) ó \(\mathcal{I}^{\star}_{2}\left( \psi\right) = 1\)
+    \end{itemize}
+    Aplicando \textbf{hipótesis de inducción} tenemos que:
+    \[
+        \mathcal{I}_1(\varphi)=\mathcal{I}_2(\varphi)
+    \]
+    Por la observación que se realizó acerca de la \textbf{sobrecarga de operadores}. Sabemos que 
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi\right) = \mathcal{I}_{1}\left(\varphi\right)\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi\right) = \mathcal{I}_{2}\left(\varphi\right)\)
+    \end{itemize}
+    Así
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \lor \psi\right) = \mathcal{I}_{1}\left(\varphi \lor \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}_{1}\left( \varphi\right) = \mathcal{I}^{\star}_{1}\left( \psi\right) = \mathcal{I}_{1}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \lor \psi\right) = \mathcal{I}_{2}\left(\varphi \lor \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}_{2}\left( \varphi\right) = \mathcal{I}^{\star}_{2}\left( \psi\right) = \mathcal{I}_{2}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \lor \psi\right) = \mathcal{I}_{1}\left(\varphi \lor \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = \mathcal{I}_{1}\left( \varphi\right) = 1\) ó \(\mathcal{I}^{\star}_{1}\left(\psi\right) = \mathcal{I}_{1}\left(\psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \lor \psi\right) = \mathcal{I}_{2}\left(\varphi \lor \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = \mathcal{I}_{2}\left( \varphi\right) = 1\) ó \(\mathcal{I}^{\star}_{2}\left(\psi\right) = \mathcal{I}_{2}\left(\psi\right) = 1\)
+    \end{itemize}
+    Independientemente del valor de \(\varphi \land \psi\) y aplicando la observación hecha para la \textbf{sobrecarga de operadores} tenemos que:
+    \[
+        \mathcal{I}_{1}\left(\varphi \lor \psi\right) = \mathcal{I}^{\star}_{1}\left(\varphi \lor \psi\right) = \mathcal{I}^{\star}_{2}\left(\varphi \lor \psi\right) = \mathcal{I}_{2}\left(\varphi \lor \psi\right)
+    \]
+    Implicación (\(\to\))
+    \newline
+    Entonces por definición de \textbf{interpretación} tenemos que:
+    \begin{itemize}
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \to \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = 1\) e \(\mathcal{I}^{\star}_{1}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \to \psi\right) = 0\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = 1\) e \(\mathcal{I}^{\star}_{2}\left( \psi\right) = 0\)
+        \item \(\mathcal{I}^{\star}_{1}\left(\varphi \to \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{1}\left( \varphi\right) = 1\) ó \(\mathcal{I}^{\star}_{1}\left( \psi\right) = 1\)
+        \item \(\mathcal{I}^{\star}_{2}\left(\varphi \to \psi\right) = 1\) sí y sólo sí \(\mathcal{I}^{\star}_{2}\left( \varphi\right) = 1\) ó \(\mathcal{I}^{\star}_{2}\left( \psi\right) = 1\)
+    \end{itemize}
+\end{proof}
 \subsection{Estado modificado o actualizado}
 \noindent
 Sean $\mathcal{I}: VarP \to \text{\texttt{Bool}}$ un estado de las variables, $p$ una variable 
