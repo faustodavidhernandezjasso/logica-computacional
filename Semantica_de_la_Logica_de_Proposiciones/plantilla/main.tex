@@ -672,16 +672,15 @@ medio de interpretaciones:
 \begin{enumerate}
     \item $\Gamma = \{ p \to q,\; (s \lor p) \land \lnot q,\;\lnot s\}$
     \item $\Gamma = \{(p \to r) \lor (\lnot s \land p),\; s \to \lnot(p \land r),\; r \lor
-    \lnot s\}$
+          \lnot s\}$
     \item $\Gamma = \{p\lor (q\land s),\; (\lnot r \lor s) \land (s\to t),\; \lnot p \lor
-    \lnot
-t \} $
+          \lnot t \} $
 \end{enumerate}
 \subsubsection{Solución}
 \noindent
 Recordemos la siguiente equivalencia:
 \newline
-$\Gamma$ es satisfacible syss $\varphi_1\land\ldots\land\varphi_n$ es
+$\Gamma$ es satisfacible sí y sólo sí $\varphi_1\land\ldots\land\varphi_n$ es
 satisfacible.
 \newline 
 A su vez sabemos que \(\Gamma\) es satisfacible si tiene un modelo, es decir, si existe una 
@@ -725,4 +724,110 @@ Que justamente son las interpretaciones que obtuvimos. Por lo tanto el conjunto 
 es satisfacible. Notemos que mostramos que para cualquier estado \textit{(para aquellos que hace sentido tomar en cuenta
 por ejemplo no contamos que \(\mathcal{I}\left(s\right) = 1\) ya que automáticamente nos hace que \(\Gamma\) no 
 es satisfacible)} de las variables no se satisface a \(\Gamma\).
+\newline
+Veamos (2)
+\newline
+Supongamos que \(\mathcal{I}\left(\Gamma\right) = 1\), lo anterior implica que
+\begin{align*}
+    \mathcal{I}\left((p \to r) \lor (\lnot s \land p)\right) &= 1 \\ 
+    \mathcal{I}\left(s \to \lnot(p \land r)\right) &= 1 \\
+    \mathcal{I}\left(r \lor \lnot s\right) &= 1
+\end{align*}
+Sabemos que \(\mathcal{I}\left(r \lor \lnot s\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I} \left(r \right) = 1 \ \text{ó} \ \mathcal{I} \left( \neg s \right) = 1
+\]
+Supongamos que \(\mathcal{I} \left(r \right) = \mathcal{I} \left( \neg s \right) = 1\).
+Sabemos que \(\mathcal{I} \left( \neg s \right) = 1\) sí y sólo sí
+\[
+    \mathcal{I} \left( s \right) = 0
+\]
+Por lo anterior sabemos que \(\mathcal{I}\left(\lnot(p \land r)\right) = 1\) ó
+\(\mathcal{I}\left(\lnot(p \land r)\right) = 0\), supongamos que se cumple lo último.
+Sabemos que \(\mathcal{I}\left(\lnot(p \land r)\right) = 0\) sí y sólo sí
+\[
+    \mathcal{I}\left(p \land r\right) = 1
+\]
+Sabemos que \(\mathcal{I}\left(p \land r\right) = 1\) sí y sólo sí 
+\[
+    \mathcal{I}\left(p\right) = \mathcal{I}\left(r\right) = 1
+\]
+Notemos que no hemos entrado en ninguna contradicción, ya que anteriormente supusimos que
+\(\mathcal{I}\left(r\right) = 1\). Observemos que \(\mathcal{I}\left(p \to r\right) = 1\), 
+ya que
+\begin{align*}
+    \mathcal{I}\left(p\right) &= 1 \\
+    \mathcal{I}\left(r\right) &= 1
+\end{align*}
+Observemos que \(\mathcal{I}\left(\lnot s \land p\right) = 1\), 
+ya que
+\begin{align*}
+    \mathcal{I}\left(p\right) &= 1 \\
+    \mathcal{I}\left(\lnot s\right) &= 1
+\end{align*}
+Consecuentemente \(\mathcal{I}\left((p \to r) \lor (\lnot s \land p)\right) = 1\).
+Por lo tanto \(\Gamma\) es satisfacible bajo el siguiente modelo:
+\begin{align*}
+    \mathcal{I}\left(p\right) &= 1 \\
+    \mathcal{I}\left(r\right) &= 1 \\
+    \mathcal{I}\left(s\right) &= 0
+\end{align*}
+Veamos (3)
+\newline
+Supongamos que \(\mathcal{I}\left(\Gamma\right) = 1\), lo anterior implica que
+\begin{align*}
+    \mathcal{I}\left(p \lor (q\land s) \right) &= 1 \\
+    \mathcal{I}\left((\lnot r \lor s) \land (s\to t)\right) &= 1 \\
+    \mathcal{I}\left(\lnot p \lor \lnot t\right) &= 1
+\end{align*}
+Sabemos que \(\mathcal{I}\left((\lnot r \lor s) \land (s\to t) \right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(\lnot r \lor s\right) = \mathcal{I}\left(s\to t \right) = 1
+\]
+Sabemos que \(\mathcal{I}\left(\lnot r \lor s\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(\lnot r\right) = 1 \ \text{ó} \ \mathcal{I}\left(s\right) = 1
+\]
+Supongamos que \(\mathcal{I}\left(\lnot r\right) = \mathcal{I}\left(s\right) = 1\).
+Sabemos que \(\mathcal{I}\left(\lnot r\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(r\right) = 0
+\]
+Por suposición, tenemos que \(\mathcal{I}\left(t\right) = 1\) ya que
+\begin{align*}
+    \mathcal{I}\left(t\right) &= 1 \\
+    \mathcal{I}\left(s\to t \right) &= 1
+\end{align*}
+Sabemos que \(\mathcal{I}\left(t\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(\neg t\right) = 0
+\]
+Como tenemos que 
+\[
+    \mathcal{I}\left(\lnot p \lor \lnot t\right) = 1
+\]
+Entonces
+\[
+    \mathcal{I}\left(\lnot p\right) = 1
+\]
+Lo anterior ocurre sí y sólo sí
+\[
+    \mathcal{I}\left(p\right) = 0
+\]
+Notemos que \(\mathcal{I}\left(q \land s\right) = 1\), ya que
+\[
+    \mathcal{I}\left(p\right) = 0
+\]
+Sabemos que \(\mathcal{I}\left(q \land s\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(q\right) = \mathcal{I}\left(s\right) = 1
+\]
+Por lo tanto \(\Gamma\) es satisfacible bajo el siguiente modelo:
+\begin{align*}
+    \mathcal{I}\left(q\right) &= 1 \\
+    \mathcal{I}\left(s\right) &= 1 \\
+    \mathcal{I}\left(p\right) &= 0 \\
+    \mathcal{I}\left(t\right) &= 1 \\
+    \mathcal{I}\left(r\right) &= 0
+\end{align*}
 \end{document}
