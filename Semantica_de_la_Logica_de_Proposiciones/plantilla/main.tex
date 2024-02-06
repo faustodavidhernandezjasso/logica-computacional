@@ -830,4 +830,140 @@ Por lo tanto \(\Gamma\) es satisfacible bajo el siguiente modelo:
     \mathcal{I}\left(t\right) &= 1 \\
     \mathcal{I}\left(r\right) &= 0
 \end{align*}
+\subsection{Ejercicio 5}
+Pruebe la correctud de los siguientes argumentos de la l\'ogica
+proposicional. Resuelva por interpretaciones apoy\'andose del principio de
+refutaci\'on.
+\begin{enumerate}
+\item $p \lor q, \lnot r \to \lnot p$ entonces $q \to \lnot r$
+\item $p \to q \lor r, r \to \lnot p, q \to \lnot p$ entonces $\lnot (p
+\land \lnot s)$
+\end{enumerate}
+\subsubsection{Solución}
+Necesitamos tener presente la definiciones de:
+\begin{itemize}
+    \item \textbf{Consecuencia Lógica}
+    \item \textbf{Principio de Refutación}
+    \item \textbf{Correctud de Argumentos Lógicos}
+\end{itemize}
+Las definiciones son las siguientes:
+\newline 
+\textbf{Consecuencia Lógica}
+\newline
+Sean $\Gamma$ un conjunto de f\'ormulas y $\varphi$ una f\'ormula. Decimos 
+que $\varphi$ es consecuencia l\'ogica de $\Gamma$ si para toda interpretaci\'on 
+$\mathcal{I}$ que sastisface a $\Gamma$ se tiene $\mathcal{I}(\varphi)=1$. 
+Es decir si se cumple que siempre que $\mathcal{I}$ satisface a $\Gamma$ entonces 
+necesariamente $\mathcal{I}$ satisface a $\varphi$.
+En tal caso escribimos $\Gamma\models\varphi$.
+\newline 
+\textbf{Principio de Refutación}
+\newline
+$\Gamma\models\varphi$ sí y sólo sí $\Gamma\cup\{\lnot\varphi\}$
+\newline
+\textbf{Correctud de Argumentos Lógicos}
+\newline 
+Un argumento l\'ogico es una sucesi\'on de f\'ormulas 
+$\varphi_1,\ldots,\varphi_n$ llamadas premisas y una f\'ormula $\psi$ llamada 
+conclusi\'on.
+\newline
+Un argumento con premisas $\varphi_1,\ldots,\varphi_n$ y conclusi\'on $\psi$ es
+l\'ogicamente correcto si la conclusi\'on se sigue l\'ogicamente de las 
+premisas, es decir si $\{\varphi_1,\ldots,\varphi_n\}\models\psi$.
+\newline
+Las definiciones anteriores nos indican como demostrar de manera formal la \textbf{correctud de un
+argumento}. Sea \(\Gamma = \{\varphi_1, \varphi_2, \dotsc, \varphi_n\}\), el conjunto que contiene
+a las hipótesis del argumento lógico y sea \(\psi\) la conclusión entonces para demostrar que el 
+argumento es correcto, existen dos maneras
+\begin{itemize}
+    \item Iniciamos suponiendo que \(\mathcal{I}\left(\Gamma\right) = 1\) y mediante la aplicación 
+    de las definiciones de \textbf{interpretación de fórmulas} llegamos a que se cumple 
+    \(\mathcal{I}\left(\psi\right) = 1\).
+    \item Definimos a un conjunto \(\Gamma'\) el cual está dado por \(\Gamma \cup \{\neg \psi\}\)
+    y suponiendo que \(\mathcal{I}\left(\Gamma'\right) = 1\) llegar a una contradicción, es decir,
+    es satisfacible \(\Gamma'\) pero sí una variable proposicional tiene que ser verdadera y 
+    falsa al mismo tiempo, lo cual sabemos que es imposible.
+\end{itemize}
+Específicamente el ejercicio nos pide utilizar \textbf{principio de refutación}, entonces utilizaremos
+la segunda forma.
+\newline 
+Veamos (1)
+\newline
+Sea \(\Gamma = \{ p \lor q, \lnot r \to \lnot p  \}\). Tomemos la negación de \(q \to \lnot r\), es decir
+\begin{align*}
+    \neg \left(q \to \lnot r\right) &\equiv \neg \left(\neg q \lor \lnot r\right)  &\text{Eliminación de \(\to\)} \\
+                                    &\equiv \neg \neg q \land \neg \lnot r  &\text{De Morgan} \\
+                                    &\equiv q \land r &\text{Doble Negación} \\
+\end{align*}
+Definimos a \(\Gamma'\) como sigue:
+\begin{align*}
+    \Gamma \cup \{ q \land r \} &= \{ p \lor q, \lnot r \to \lnot p  \} \cup \{ q \land r \} \\
+                                &= \{ p \lor q, \lnot r \to \lnot p, q \land r \} \\
+\end{align*}
+Supongamos que \(\mathcal{I}\left(\Gamma'\right) = 1\), es decir
+\begin{align*}
+    \mathcal{I}\left(p \lor q\right) &= 1 \\
+    \mathcal{I}\left(\lnot r \to \lnot p\right) &= 1 \\
+    \mathcal{I}\left(q \land r\right) &= 1
+\end{align*}
+Sabemos que \(\mathcal{I}\left(q \land r\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(q\right) = \mathcal{I}\left(r\right) = 1
+\]
+Observamos que independientemente del valor que tome \(\mathcal{I}\left(p\right)\), el conjunto
+es satisfacible, no llegamos a ninguna contradicción. Por lo tanto el argumento no es correcto.
+\newline
+Veamos (2)
+\newline
+Sea \(\Gamma = \{  p \to q \lor r, r \to \lnot p, q \to \lnot p \}\). Tomemos la negación de 
+\(\lnot (p \land \lnot s)\), es decir
+\begin{align*}
+    \neg \lnot (p \land \lnot s) &\equiv p \land \lnot s  &\text{Eliminación de \(\to\)}
+\end{align*}
+Definimos a \(\Gamma'\) como sigue:
+\begin{align*}
+    \Gamma \cup \{ p \land \lnot s \} &= \{p \to q \lor r, r \to \lnot p, q \to \lnot p  \} \cup \{ p \land \lnot s \} \\
+                                &= \{ p \to q \lor r, r \to \lnot p, q \to \lnot p, p \land \lnot s \} \\
+\end{align*}
+Supongamos que \(\mathcal{I}\left(\Gamma'\right) = 1\), es decir
+\begin{align*}
+    \mathcal{I}\left(p \to q \lor r\right) &= 1 \\
+    \mathcal{I}\left(r \to \lnot p\right) &= 1 \\
+    \mathcal{I}\left(q \to \lnot p\right) &= 1 \\
+    \mathcal{I}\left(p \land \lnot s\right) &= 1
+\end{align*}
+Sabemos que \(\mathcal{I}\left(p \land \lnot s\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(p\right) = \mathcal{I}\left(\lnot s\right) = 1
+\]
+Sabemos que \(\mathcal{I}\left(p\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(\neg p\right) = 0
+\]
+Notemos que \(\mathcal{I}\left(r\right) = 0\) ya que
+\begin{align*}
+    \mathcal{I}\left(r \to \lnot p\right) &= 1 \\
+    \mathcal{I}\left(\neg p\right) &= 0
+\end{align*}
+Notemos que \(\mathcal{I}\left(q\right) = 0\) ya que
+\begin{align*}
+    \mathcal{I}\left(q \to \lnot p\right) &= 1 \\
+    \mathcal{I}\left(\neg p\right) &= 0
+\end{align*}
+Notemos que \(\mathcal{I}\left(p \to q \lor r\right) = 0\) ya que
+\begin{align*}
+    \mathcal{I}\left(p\right) &= 1 \\
+    \mathcal{I}\left(q\right) &= 0 \\
+    \mathcal{I}\left(r\right) &= 0
+\end{align*}
+Notemos que para que el conjunto sea satisfacible se tiene que cumplir que
+\begin{align*}
+    \mathcal{I}\left(p \to q \lor r\right) &= 1 \\
+    \mathcal{I}\left(p \to q \lor r\right) &= 0
+\end{align*}
+Por lo tanto \(\Gamma'\) no es satisfacible. Consecuentemente
+\[
+    \Gamma \models \lnot (p \land \lnot s)
+\]
+Por lo tanto el argumento es correcto.
 \end{document}
