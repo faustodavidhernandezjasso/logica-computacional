@@ -966,4 +966,146 @@ Por lo tanto \(\Gamma'\) no es satisfacible. Consecuentemente
     \Gamma \models \lnot (p \land \lnot s)
 \]
 Por lo tanto el argumento es correcto.
+\subsection{Ejercicio 6}
+Demuestre las siguientes propiedades de la consecuencia l\'ogica:
+\begin{enumerate}
+    \item Si $\Gamma,\phi\models \psi$ entonces $\Gamma,\neg\psi\models \neg \phi$.
+    \item Si $\Gamma,\phi\lor\psi\models \neg\phi$ entonces
+    $\Gamma,\phi\lor\psi\models\psi$.
+    \item $\Gamma,\phi\land\psi\models \phi$
+    \item $\Gamma,\psi\models \psi\lor\phi$
+\end{enumerate}
+\subsubsection{Solución}
+Necesitamos tener presente la definición de:
+\begin{itemize}
+    \item \textbf{Consecuencia Lógica}
+\end{itemize}
+\textbf{Consecuencia Lógica}
+\newline
+Sean $\Gamma$ un conjunto de f\'ormulas y $\varphi$ una f\'ormula. Decimos 
+que $\varphi$ es consecuencia l\'ogica de $\Gamma$ si para toda interpretaci\'on 
+$\mathcal{I}$ que sastisface a $\Gamma$ se tiene $\mathcal{I}(\varphi)=1$. 
+Es decir si se cumple que siempre que $\mathcal{I}$ satisface a $\Gamma$ entonces 
+necesariamente $\mathcal{I}$ satisface a $\varphi$.
+En tal caso escribimos $\Gamma\models\varphi$.
+\newline 
+Al igual que las siguientes equivalencias:
+\begin{itemize}
+    \item $\Gamma\models\varphi\to\psi$ sí y sólo sí $\Gamma\cup\{\varphi\}\models\psi$.
+    \item \(\varphi \to \psi \equiv \neg \psi \to \neg \varphi \)
+\end{itemize}
+Veamos (1)
+\begin{proof}
+    Supongamos que \(\Gamma,\phi\models \psi\), sabemos que lo anterior es equivalente a
+    \[
+        \Gamma \models \phi \to \psi  
+    \]
+    Por definición de \textbf{consecuencia lógica} tenemos que
+    \[
+        \mathcal{I}\left(\Gamma\right) = 1 \to \mathcal{I}\left(\phi \to \psi\right) = 1
+    \]
+    Sabemos que \(\phi \to \psi \equiv \neg \psi \to \neg \phi\) así
+    \[
+        \mathcal{I}\left(\neg \psi \to \neg \psi\right) = 1
+    \]
+    Reescribiendo
+    \[
+        \mathcal{I}\left(\Gamma\right) = 1 \to \mathcal{I}\left(\neg \psi \to \neg \phi\right) = 1    
+    \]
+    por definición de \textbf{consecuencia lógica} tenemos que
+    \[
+        \Gamma \models \neg \psi \to \neg \phi
+    \]
+    Lo anterior es equivalente a
+    \[
+        \Gamma, \neg \psi \models \neg \phi
+    \]
+\end{proof}
+Veamos (2)
+\begin{proof}
+    Supongamos que $\Gamma,\phi\lor\psi\models \neg\phi$. Por definición de \textbf{consecuencia 
+    lógica} tenemos que
+    \[
+        \mathcal{I}\left(\Gamma \land \left(\phi\lor\psi\right)\right) = 1
+    \]
+    Sabemos que \(\mathcal{I}\left(\Gamma \land \left(\phi\lor\psi\right)\right) = 1\) sí y sólo sí
+    \[
+        \mathcal{I}\left(\Gamma\right) = \mathcal{I}\left(\phi\lor\psi\right) = 1  
+    \]
+    Sabemos que como lo anterior se cumple \textbf{(por suposición)} entonces se cumple que
+    \[
+        \mathcal{I}\left(\neg \phi\right) = 1
+    \]
+    Sabemos que \(\mathcal{I}\left(\neg \phi\right) = 1\) sí y sólo sí
+    \[
+        \mathcal{I}\left(\phi\right) = 0
+    \]
+    Sabemos que \(\mathcal{I}\left(\phi\lor\psi\right) = 1\) sí y sólo sí
+    \[
+        \mathcal{I}\left(\phi\right) = 1 \ \text{ó} \ \mathcal{I}\left(\psi\right) = 1
+    \]
+    Sabemos que \(\mathcal{I}\left(\phi\right) = 0\) entonces
+    \[
+        \mathcal{I}\left(\psi\right) = 1
+    \]
+    Ya que \(\mathcal{I}\left(\phi\lor\psi\right) = 1\).
+    \newline
+    Así 
+    \[
+        \mathcal{I}\left(\Gamma \land \left(\phi\lor\psi\right)\right) = 1 \to \mathcal{I}\left(\psi\right) = 1
+    \]
+    Consecuentemente, por la definición de \textbf{consecuencia lógica}
+    \[
+        \Gamma, \phi\lor\psi \models \psi
+    \]
+\end{proof}
+Veamos (3)
+\begin{proof}
+    Supongamos que \(\mathcal{I}\left(\Gamma \land \left(\phi \land \psi\right)\right) = 1\). 
+    \newline 
+    Sabemos que \(\mathcal{I}\left(\Gamma \land \left(\phi \land \psi\right)\right) = 1\) sí y sólo sí
+    \[
+        \mathcal{I}\left(\Gamma \right) = 
+        \mathcal{I}\left(\phi \land \psi\right) = 1
+    \]
+    Sabemos que \(\mathcal{I}\left(\phi \land \psi\right) = 1\) sí y sólo sí
+    \[
+        \mathcal{I}\left(\phi\right) = \mathcal{I}\left(\psi\right) = 1
+    \]
+    Consecuentemente tenemos que
+    \[
+        \mathcal{I}\left(\Gamma \land \left( \phi \land \psi \right)\right) = 1 \to 
+        \mathcal{I}\left(\phi\right) = 1
+    \]
+    Por definición de \textbf{consecuencia lógica}
+    \[
+        \Gamma, \phi \land \psi \models \phi
+    \]
+\end{proof}
+Veamos (4)
+\begin{proof}
+    Supongamos que \(\mathcal{I}\left(\Gamma \land \psi\right) = 1\). 
+    \newline
+    Sabemos que \(\mathcal{I}\left(\Gamma \land \psi\right) = 1\) sí y sólo sí
+    \[
+        \mathcal{I}\left(\Gamma\right) = \mathcal{I}\left(\psi\right) = 1
+    \]
+    Sea \(\phi \in \text{\texttt{PROP}}\) sabemos que 
+    \[
+        \mathcal{I}\left(\psi \lor \phi\right) = 1
+    \]
+    Ya que
+    \[
+        \mathcal{I}\left(\psi\right) = 1        
+    \]
+    Consecuentemente tenemos que
+    \[
+        \mathcal{I}\left(\Gamma \land \psi \right) = 1 \to 
+        \mathcal{I}\left(\psi \lor \phi\right) = 1
+    \]
+    Por definición de \textbf{consecuencia lógica}
+    \[
+        \Gamma, \psi \models \psi \lor \phi
+    \]
+\end{proof}
 \end{document}
