@@ -1108,4 +1108,352 @@ Veamos (4)
         \Gamma, \psi \models \psi \lor \phi
     \]
 \end{proof}
+\newpage
+\subsection*{Ejercicio 6}
+Demuestra que las siguientes fórmulas son equivalentes utilizando equivalencias.
+    \[
+        ((( \varphi_1 \rightarrow \varphi_2) \rightarrow \varphi_1) \rightarrow \varphi_1) \hspace{2cm} (\varphi_3 \rightarrow \varphi_4) \lor \varphi_3
+    \]
+\subsubsection*{Solución}
+Veamos $((( \varphi_1 \rightarrow \varphi_2) \rightarrow \varphi_1) \rightarrow \varphi_1)$
+    \newline
+    $\varphi \rightarrow \psi \equiv \neg \varphi \lor \psi$ \textbf{Eliminación de conectivos}
+    \[
+        ((( \neg \varphi_1 \lor \varphi_2) \rightarrow \varphi_1) \rightarrow \varphi_1)
+    \]
+    $\varphi \rightarrow \psi \equiv \neg \varphi \lor \psi$ \textbf{Eliminación de conectivos}
+    \[
+        ((\neg ( \neg \varphi_1 \lor \varphi_2) \lor \varphi_1) \rightarrow \varphi_1)
+    \]
+    $\neg(\varphi \lor \psi) \equiv (\neg \varphi \land \neg \psi)$ \textbf{De Morgan}
+    \[
+        (((\neg\neg \varphi_1 \land  \neg \varphi_2) \lor \varphi_1) \rightarrow \varphi_1)
+    \]
+    $\neg \neg \varphi \equiv \varphi$ \textbf{Doble negación}
+    \[
+        (((\varphi_1 \land  \neg \varphi_2) \lor \varphi_1) \rightarrow \varphi_1)
+    \]
+    $\varphi \lor \psi \equiv \psi \lor \varphi$ \textbf{Conmutatividad}
+    \[
+        ((\varphi_1 \lor (\varphi_1 \land  \neg \varphi_2)) \rightarrow \varphi_1)
+    \]
+    $\varphi \lor (\psi \land \chi) \equiv (\varphi \lor \psi) \land (\varphi \lor \chi)$ \textbf{Distributividad}
+    \[
+        (((\varphi_1 \lor \varphi_1) \land  (\varphi_1 \lor \neg \varphi_2)) \rightarrow \varphi_1)
+    \]
+    $\varphi \lor \varphi \equiv \varphi$ \textbf{Idempotencia}
+    \[
+        ((\varphi_1 \land  (\varphi_1 \lor \neg \varphi_2)) \rightarrow \varphi_1)
+    \]
+    $\varphi \rightarrow \psi \equiv \neg \varphi \lor \psi$ \textbf{Eliminación de conectivos}
+    \[
+        \neg (\varphi_1 \land  (\varphi_1 \lor \neg \varphi_2)) \lor \varphi_1
+    \]
+    $\neg(\varphi \land \psi) \equiv (\neg \varphi \lor \neg \psi)$ \textbf{De Morgan}
+    \[
+        (\neg \varphi_1 \lor \neg (\varphi_1 \lor \neg \varphi_2)) \lor \varphi_1
+    \]
+    $\varphi \lor \psi \equiv \psi \lor \varphi$ \textbf{Conmutatividad}
+    \[
+        (\neg (\varphi_1 \lor \neg \varphi_2) \lor \neg \varphi_1) \lor \varphi_1
+    \]
+    $(\varphi \lor \psi) \lor \chi \equiv \varphi \lor (\psi \lor \chi)$ \textbf{Asociatividad}
+    \[
+        \neg (\varphi_1 \lor \neg \varphi_2) \lor (\neg \varphi_1 \lor \varphi_1)
+    \]
+    $\varphi \lor \neg \varphi \equiv \top$ \textbf{Tercero Excluido}
+    \[
+        \neg (\varphi_1 \lor \neg \varphi_2) \lor \top
+    \]
+    $\varphi \lor \top \equiv \top$ \textbf{Dominancia}
+    \[
+        \top
+    \]
+    Veamos $(\varphi_3 \rightarrow \varphi_4) \lor \varphi_3$
+    \[
+        (\varphi_3 \rightarrow \varphi_4) \lor \varphi_3
+    \]
+    $\varphi \rightarrow \psi \equiv \neg \varphi \lor \psi$ \textbf{Eliminación de conectivos}
+    \[
+        (\neg \varphi_3 \lor \varphi_4) \lor \varphi_3
+    \]
+    $\varphi \lor \psi \equiv \psi \lor \varphi$ \textbf{Conmutatividad}
+    \[
+        ( \varphi_4 \lor \neg \varphi_3) \lor \varphi_3
+    \]
+    $(\varphi \lor \psi) \lor \chi \equiv \varphi \lor (\psi \lor \chi)$ \textbf{Asociatividad}
+    \[
+        \varphi_4 \lor (\neg \varphi_3 \lor \varphi_3)
+    \]
+    $\varphi \lor \neg \varphi \equiv \top$ \textbf{Tercero Excluido}  
+    \[
+        \varphi_4 \lor \top
+    \]
+    $\varphi \lor \top \equiv \top$ \textbf{Dominancia}
+    \[
+        \top
+    \]
+    Como $((( \varphi_1 \rightarrow \varphi_2) \rightarrow \varphi_1) \rightarrow \varphi_1)$ y $(\varphi_3 \rightarrow \varphi_4) \lor \varphi_3$ son ambas tautologías, ambas son equivalentes.
+\subsection*{Ejercicio 7}
+Analice la consecuencia l\'ogica:
+\begin{enumerate}
+% \item $\{p \to q,\; q \to r \to s,\; p \to q \to r \} \models p \to s$
+% \item $\{p \to q,\; q\land r  \to s,\; r\} \models p \to s$
+ \item $\{p \to q \to r,\; p\lor s,\; t \to q,\;\lnot s \} \models
+ \lnot r  \to\lnot t$
+%\item $\{t \to p\lor q,\; p \to s\land u,\; q \to \lnot u \} \models
+%t  \to s\lor \lnot u $
+%  \item $\{(s \to q)  \to s\land r,\;
+%   p \to \lnot\big( (r \to\lnot q) \land (p \to r)\big)  \to \lnot q \} \models
+%   p\land \lnot s$
+%  \item $\{p \to q\lor r,\; \lnot p  \to t,\; (\lnot t\lor s)\land \lnot q \}
+%   \models r\lor s$
+\end{enumerate}
+\subsubsection*{Solución}
+Necesitamos tener presente la definición de:
+\begin{itemize}
+    \item \textbf{Consecuencia Lógica}
+\end{itemize}
+\textbf{Consecuencia Lógica}
+\newline
+Sean $\Gamma$ un conjunto de f\'ormulas y $\varphi$ una f\'ormula. Decimos 
+que $\varphi$ es consecuencia l\'ogica de $\Gamma$ si para toda interpretaci\'on 
+$\mathcal{I}$ que sastisface a $\Gamma$ se tiene $\mathcal{I}(\varphi)=1$. 
+Es decir si se cumple que siempre que $\mathcal{I}$ satisface a $\Gamma$ entonces 
+necesariamente $\mathcal{I}$ satisface a $\varphi$.
+En tal caso escribimos $\Gamma\models\varphi$.
+\newline 
+Veamos (1)
+\newline
+Supongamos que
+\begin{align*}
+    \mathcal{I}\left(p \to q \to r\right) &= 1 \\
+    \mathcal{I}\left(p\lor s\right) &= 1 \\
+    \mathcal{I}\left(t \to q\right) &= 1 \\
+    \mathcal{I}\left(\lnot s\right) &= 1
+\end{align*}
+Sabemos que \(\mathcal{I}\left(\lnot s\right) = 1\) sí y sólo sí
+\[
+    \mathcal{I}\left(s\right) = 0
+\]
+Como \(\mathcal{I}\left(p\lor s\right) = 1\) y \(\mathcal{I}\left(s\right) = 0\) entonces
+\[
+    \mathcal{I}\left(p\right) = 1
+\]
+Como la implicación asocia hacia la izquierda entonces
+\[
+    p \to q \to r \equiv p \to \left(q \to r\right)
+\]
+Como \(\mathcal{I}\left(p\right) = 1\) entonces
+\[
+    \mathcal{I}\left(q \to r\right) = 1
+\]
+Tenemos 3 opciones
+\begin{align*}
+    \mathcal{I}\left(q\right) = \mathcal{I}\left(r\right) &= 1 \\
+    \mathcal{I}\left(q\right) = \mathcal{I}\left(r\right) &= 0 \\
+    \mathcal{I}\left(q\right) = 0 &\text{ y } \mathcal{I}\left(r\right) = 1 
+\end{align*}
+Supongamos que \(\mathcal{I}\left(q\right) = \mathcal{I}\left(r\right) = 1\)
+\newline 
+Como \(\mathcal{I}\left(t \to q\right) = 1\) y \(\mathcal{I}\left(q\right) = 1\) entonces
+\[
+    \mathcal{I}\left(t\right) = 1
+\]
+ó
+\[
+    \mathcal{I}\left(t\right) = 0
+\]
+Supongamos que \(\mathcal{I}\left(t\right) = 1\)
+\newline
+Notemos que
+\begin{align*}
+    \mathcal{I}\left(t\right) &= 1 \\
+    \mathcal{I}\left(r\right) &= 1
+\end{align*}
+Entonces 
+\begin{align*}
+    \mathcal{I}\left(\neg t\right) &= 0 \\
+    \mathcal{I}\left(\neg r\right) &= 0
+\end{align*}
+Así
+\[
+    \mathcal{I}\left(\neg t \to \neg r\right) = 1
+\]
+Supongamos que \(\mathcal{I}\left(t\right) = 0\)
+\newline
+Notemos que
+\begin{align*}
+    \mathcal{I}\left(t\right) &= 0 \\
+    \mathcal{I}\left(r\right) &= 1
+\end{align*}
+Entonces 
+\begin{align*}
+    \mathcal{I}\left(\neg t\right) &= 1 \\
+    \mathcal{I}\left(\neg r\right) &= 0
+\end{align*}
+Así
+\[
+    \mathcal{I}\left(\neg t \to \neg r\right) = 1
+\]
+Supongamos que \(\mathcal{I}\left(q\right) = \mathcal{I}\left(r\right) = 0\)
+\newline 
+Como \(\mathcal{I}\left(t \to q\right) = 1\) y \(\mathcal{I}\left(q\right) = 0\) entonces
+\[
+    \mathcal{I}\left(t\right) = 0
+\]
+Notemos que
+\begin{align*}
+    \mathcal{I}\left(t\right) &= 0 \\
+    \mathcal{I}\left(r\right) &= 0
+\end{align*}
+Entonces 
+\begin{align*}
+    \mathcal{I}\left(\neg t\right) &= 1 \\
+    \mathcal{I}\left(\neg r\right) &= 1
+\end{align*}
+Así
+\[
+    \mathcal{I}\left(\neg t \to \neg r\right) = 1
+\]
+Supongamos que \(\mathcal{I}\left(q\right) = 0\) y \(\mathcal{I}\left(r\right) = 1\)
+\newline 
+Como \(\mathcal{I}\left(t \to q\right) = 1\) y \(\mathcal{I}\left(q\right) = 0\) entonces
+\[
+    \mathcal{I}\left(t\right) = 0
+\]
+Notemos que
+\begin{align*}
+    \mathcal{I}\left(t\right) &= 0 \\
+    \mathcal{I}\left(r\right) &= 1
+\end{align*}
+Entonces 
+\begin{align*}
+    \mathcal{I}\left(\neg t\right) &= 1 \\
+    \mathcal{I}\left(\neg r\right) &= 0
+\end{align*}
+Así
+\[
+    \mathcal{I}\left(\neg t \to \neg r\right) = 0
+\]
+Por lo tanto
+\[
+    \{p \to q \to r,\; p\lor s,\; t \to q,\;\lnot s \} \not\models
+    \lnot r  \to\lnot t
+\]
+\newpage
+\subsection*{Ejercicio 8}
+Decidir si el siguiente argumento es correcto utilizando interpretaciones. Indicar el significado 
+de las variables proposicionales usadas y mostrar a detalle el análisis que realices.
+\newline 
+\textbf{Argumento}
+\newline
+No se ganar\'an las elecciones s\'olo si la econom\'ia va mal. \\
+Si la econom\'ia va mal, hay financiaci\'on ilegal y los pol\'iticos se 
+corrompen.\\
+Cuando las encuestas son desfavorables, no se ganar\'an las elecciones.\\
+Las encuestas son desfavorables.\\
+Por lo tanto, los pol\'iticos se corrompen.
+\subsubsection*{Solución}
+\begin{itemize}
+    \item $p = $ se ganarán las elecciones.
+    \item $q = $ la economía va mal.
+    \item $r = $ hay financiación ilegal.
+    \item $s = $ los políticos se corrompen,
+    \item $t = $ las encuestas son desfavorables.
+\end{itemize}
+\[
+    \frac{\begin{matrix}
+        \neg p \rightarrow q \\
+        q \rightarrow r \land s \\
+        t \rightarrow \neg p \\
+        t
+    \end{matrix}}{\therefore s}
+\]
+Debemos de mostrar que 
+\[
+    \{ \neg p \rightarrow q, q \rightarrow r \land s, t \rightarrow \neg p, t\} \models s
+\]
+Por el principio de refutación sabemos que es equivalente a mostrar que:
+\[
+    \{ \neg p \rightarrow q, q \rightarrow r \land s, t \rightarrow \neg p, t, \neg s\}
+\]
+no es satisfacible.
+\newline
+Procederemos a demostrar que 
+\[
+    \{ \neg p \rightarrow q, q \rightarrow r \land s, t \rightarrow \neg p, t, \neg s\}
+\]
+no es satisfacible
+\[
+    \mathcal{I}(\neg p \rightarrow q) = 1
+\]
+\[
+    \mathcal{I}(q \rightarrow r \land s) = 1
+\]
+\[
+    \mathcal{I}(t \rightarrow \neg p) = 1
+\]
+\[
+    \mathcal{I}(t) = 1
+\]
+\[
+    \mathcal{I}(\neg s) = 1
+\]
+$\mathcal{I}(\neg s) = 1$ sí y sólo sí
+\[
+    \mathcal{I}(s) = 0
+\]
+\[
+    \mathcal{I}(t \rightarrow \neg p) = 1
+\]
+Sí y sólo sí 
+\[
+    \mathcal{I}(t) = 0
+\]
+ó
+\[
+    \mathcal{I}(\neg p) = 1
+\]
+Como $\mathcal{I}(t) = 1$ entonces $\mathcal{I}(\neg p) = 1$
+\[
+    \mathcal{I}(\neg p \rightarrow q) = 1
+\]
+Sí y sólo sí
+\[
+    \mathcal{I}(\neg p) = 0
+\]
+ó
+\[
+    \mathcal{I}(q) = 1
+\]
+Como $\mathcal{I}(\neg p) = 1$ entonces $\mathcal{I}(q) = 1$
+\[
+    \mathcal{I}(q \rightarrow r \land s) = 1
+\]
+Sí y sólo sí
+\[
+    \mathcal{I}(q) = 0
+\]
+ó
+\[
+    \mathcal{I}(r \land s) = 1
+\]
+Como $\mathcal{I}(q) = 1$ entonces $\mathcal{I}(r \land s) = 1$. 
+\[
+    \mathcal{I}(r \land s) = 1
+\]
+Sí y sólo sí
+\[
+    \mathcal{I}(r) = 1
+\]
+e
+\[
+\mathcal{I}(s) = 1
+\]
+Pero no es posible que $\mathcal{I}(s) = 1$ e $\mathcal{I}(s) = 0$, por tanto $\{ \neg p \rightarrow q, q \rightarrow r \land s, t \rightarrow \neg p, t, \neg s\}$ no es satisfacible, así podemos concluir que,  
+\[
+    \{ \neg p \rightarrow q, q \rightarrow r \land s, t \rightarrow \neg p, t\} \models s
+\]
+y también que el argumento es correcto.
 \end{document}
