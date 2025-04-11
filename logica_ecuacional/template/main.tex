@@ -1,0 +1,310 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\newcommand{\pow}[2]{#1^{#2}}
+\newcommand{\supra}[1]{\textsuperscript{#1}}
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.35\textwidth} 
+\raggedright
+\footnotesize
+Fausto David Hernández Jasso \hfill\\   
+\texttt{@FaustoJH} \hfill\\
+\href{mailto:fausto.david.hernandez.jasso@ciencias.unam.mx}{fausto.david.hernandez.jasso@ciencias.unam.mx}
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+Lógica Ecuacional\\ 
+\normalsize 
+Ejemplos\\ 
+\end{minipage}
+\begin{minipage}{0.24\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule
+\bigskip
+\section{Anillos}
+\noindent
+Una anillo es una estructura algebraica \(\mathfrak{R} = (R, +, \cdot, 0_{R})\),
+donde \(+\) y \(\cdot\) son operaciones binarias que cumplen lo siguiente:
+\begin{itemize}
+    \item \(+\) es conmutativa,
+    \item \(+\) es asociativa,
+    \item \(\cdot\) es asociativa,
+    \item Para todo elemento \(x \in R\) existe un elemento \(-x \in R\) tal que 
+    \(x + (-x) = 0_{R}\),
+    \item Para todo elemento \(x \in R\) se cumple que \(x + 0_{R} = x\),
+    \item \(\cdot\) se distribuye sobre \(+\)
+\end{itemize}
+Lo anterior lo podemos representar con el siguiente conjunto de ecuaciones, al que
+nombraremos \(\mathcal{A}\).
+\newline 
+Sean \(x, y, z\) cualesquiera elementos de \(R\) se tiene que:
+\begin{align*}
+    x + 0_{R} &= x & &A1 \\
+    x + y &= y + z & &A2 \\
+    x + (-x) &= 0_{R} & &A3 \\
+    (x + y) + z &= x + (y + z) & &A4 \\
+    (x \cdot y) \cdot z &= x \cdot (y \cdot z) & &A5 \\
+    x \cdot (y + z) &= x \cdot y + x \cdot z & &A6 \\
+    (x + y) \cdot z &= x \cdot z + y \cdot z & &A7 \\
+\end{align*}
+Al conjunto de ecuaciones \(\mathcal{A}\) lo llamaremos de ahora en adelante
+``base de datos''.
+\newline
+Algunos ejemplos de anillos son:
+\begin{itemize}
+    \item \((\mathbb{Z}, +_{\mathbb{Z}}, \cdot_{\mathbb{Z}}, 0_{\mathbb{Z}})\).
+    \item Los polinomios con coeficientes en los números complejos con la suma,
+    la multiplicación de polinomios usual y el elemento neutro de la multiplicación
+    es el polinomio \(0\).
+    \item Las matrices de \(2 \times 2\) con coeficientes reales con la suma y 
+    la multiplicación de matrices usual y el elemento neutro de la multiplicación
+    es la matriz cuyas entradas son \(0\).
+\end{itemize}
+Un teorema muy simple en teoría de anillos es el siguiente:
+\newline
+Sea un anillo \(\mathfrak{R} = (R, +, \cdot, 0)\) y sea \(a \in R\) entonces se cumple 
+la siguiente igualdad:
+\newline 
+\[
+    a \cdot 0 = 0
+\]
+\subsection{Demostración usual}
+\label{dem_usual}
+\begin{proof}
+    \begin{align*}
+        a \cdot 0 &= a \cdot (0 + 0) & &\text{por } A1 \\
+                  &= a \cdot 0 + a \cdot 0 & &\text{por } A6 \\
+    \end{align*}
+    Por transitividad de la igualdad tenemos que
+    \begin{align*}
+        a \cdot 0 &= a \cdot 0 + a \cdot 0 & & \\
+        a \cdot 0 + (-a \cdot 0) &= (a \cdot 0 + a \cdot 0) + (-a \cdot 0) & &\text{sumando \(-a \cdot 0\)} \\
+        0 &= (a \cdot 0 + a \cdot 0) + (-a \cdot 0) & &\text{por } A3 \\
+        0 &= a \cdot 0 + (a \cdot 0 + (-a \cdot 0)) & &\text{por } A4 \\
+        0 &= a \cdot 0 + 0 & &\text{por } A3 \\
+        0 &= a \cdot 0 & &\text{por } A1 \\
+    \end{align*}
+    Por simetría de la igualdad tenemos que
+    \begin{align*}
+        a \cdot 0 &= 0 & &
+    \end{align*}
+\end{proof}
+\subsection{Reglas de inferencia de la lógica ecuacional}
+\noindent
+Antes de entrar a la demostración con lógica ecuacional recordemos 
+las reglas de inferencia:
+\begin{center}
+    \begin{prooftree}
+        \hypo{}
+        \infer1[Hyp]{H}
+    \end{prooftree}
+    \qquad
+    \begin{prooftree}
+        \hypo{}
+        \infer1[Refl]{t = t}
+    \end{prooftree}
+    \qquad
+    \begin{prooftree}
+        \hypo{s = t}
+        \infer1[Sym]{t = s}
+    \end{prooftree}
+    \qquad
+    \begin{prooftree}
+        \hypo{t = r}
+        \hypo{r = s}
+        \infer2[Trans]{t = s}
+    \end{prooftree}
+    \qquad
+    \begin{prooftree}
+        \hypo{t = s}
+        \infer1[Inst]{t\sigma = s\sigma}
+    \end{prooftree}
+    \qquad
+    \begin{prooftree}
+        \hypo{t_{1} = s_{1}}
+        \hypo{\dotsc}
+        \hypo{t_{n} = s_{n}}
+        \infer3[Congr]{f(t_{1}, \dotsc, t_{n}) = f(s_{1}, \dotsc, s_{n})}
+    \end{prooftree}
+\end{center}
+\noindent
+Al conjunto anterior de reglas de inferencia es un ejemplo de un sistema de deducción.
+\subsection{Ejemplos de instancias de las reglas}
+\noindent
+Recordemos la definición de derivación dada en la \href{https://drive.google.com/drive/folders/1L7Ha_HJKRPGi3keZSfXxgqD4pyj1btBa}{nota 9} del curso
+\newline 
+Una deducción o derivación de un enunciado \(\mathcal{J}\) usando un sistema de deducción,
+es una secuencia finita \(\Pi = \langle \mathcal{J}_{1}, \dotsc,\mathcal{J}_{k} \rangle\)
+tal que \(\mathcal{J}_{k} = \mathcal{J}\) y cada \(\mathcal{J}_{i}\), con \(i \in \{1, \dotsc, k\}\)
+es una instancia de una regla del sistema de deducción.
+\newline 
+Daremos ejemplos de instancias de cada una de las reglas de inferencia. Tomemos 
+como base la demostración del teorema y la ``base de datos''.
+\subsubsection{Ejemplo de la regla Hyp}
+\noindent
+\begin{prooftree}
+    \hypo{}
+        \infer1[Hyp]{x + y = y + x}
+\end{prooftree}
+\newline
+La instancias de la regla Hyp siempre serán alguna de las ecuaciones de nuestra ``base de datos''.
+\subsubsection{Ejemplo de la regla Refl}
+\noindent
+\begin{prooftree}
+    \hypo{}
+        \infer1[Refl]{- 0\cdot a = - 0\cdot a}
+\end{prooftree}
+\subsubsection{Ejemplo de la regla Sym}
+\noindent
+Tomando como ejemplo la demostración usual del teorema en la sección 
+\ref{dem_usual} una instancia de la regla Sym es la siguiente:
+\newline 
+\begin{prooftree}
+    \hypo{0 = a \cdot 0}
+    \infer1[Sym]{a \cdot 0 = 0}
+\end{prooftree}
+\subsubsection{Ejemplo de la regla Trans}
+\noindent
+Tomando como ejemplo la demostración usual del teorema en la sección 
+\ref{dem_usual} una instancia de la regla Trans es la siguiente:
+\newline 
+\begin{prooftree}
+    \hypo{a \cdot 0 = a \cdot (0 + 0)}
+    \hypo{a \cdot (0 + 0) = a \cdot 0 + a \cdot 0}
+    \infer2[Trans]{a \cdot 0 = a \cdot 0 + a \cdot 0}
+\end{prooftree}
+\subsubsection{Ejemplo de la regla Trans}
+\noindent
+\begin{prooftree}
+    \hypo{x + 0 = x}
+    \infer1[Inst]{0 + 0 = 0}
+\end{prooftree}
+\newline
+Es decir aquí realizamos una sustitución cambiamos a \(x\) por \(0\).
+\subsubsection{Ejemplo de la regla Congr}
+\noindent
+Tomando como ejemplo la demostración usual del teorema en la sección 
+\ref{dem_usual} una instancia de la regla Trans es la siguiente:
+\newline 
+\begin{prooftree}
+    \hypo{a \cdot 0 = a \cdot 0 + a \cdot 0}
+    \hypo{- 0\cdot a = - 0\cdot a}
+    \infer2[Congr]{(a \cdot 0) + (- 0\cdot a) = (a \cdot 0 + a \cdot 0) + (- 0\cdot a)}
+\end{prooftree}
+
+\subsection{Demostración con lógica ecuacional}
+\noindent
+Ahora que hemos dado un ejemplo de instancias de cada una las reglas comencemos
+a realizar la demostración con lógica ecuacional de la igualdad \(a \cdot 0 = 0\).
+\newline 
+En la primera igualdad de la \ref{dem_usual} utilizamos implícitamente cinco reglas
+la regla de Refl, Hyp, Inst, Sym y Congr.
+\newline 
+Para lograr la igualdad \(a \cdot 0 = a \cdot (0 + 0)\) es necesario lo siguiente en lógica
+ecuacional:
+\begin{align*}
+    &\text{1.} & a &= a & &\text{Refl} \\
+    &\text{2.} & x + 0 &= x & &\text{Hyp} \\
+    &\text{3.} & 0 + 0 &= 0 & &\text{Inst (2)} \\
+    &\text{4.} & 0 &= 0 + 0 & &\text{Sym (3)} \\
+    &\text{5.} & a \cdot 0 &= a \cdot (0 + 0) & &\text{Congr \(\cdot\) (1)(4)}
+\end{align*}
+Para obtener la ecuación \(a \cdot (0 + 0) = a \cdot 0 + a \cdot 0\) utilizamos 
+implícitamente las reglas de Hyp e Inst
+\begin{align*}
+    &\text{6.} & x \cdot (y + z) &= x \cdot y + x \cdot z & &\text{Hyp} A6 \\
+    &\text{7.} & a \cdot (0 + 0) &= a \cdot 0 + a \cdot 0 & &\text{Inst (6)}
+\end{align*}
+Para obtener la ecuación \(a \cdot 0 = a \cdot 0 + a \cdot 0\) utilizamos 
+implícitamente la regla de Trans
+\begin{align*}
+    &\text{8.} & a \cdot 0 &= a \cdot 0 + a \cdot 0 & &\text{Trans (5)(7)}
+\end{align*}
+Para obtener la ecuación \((a \cdot 0) + (-a \cdot 0)  = (a \cdot 0 + a \cdot 0) + (-a \cdot 0)\)
+utilizamos implícitamente las reglas de Refl y Congr
+\begin{align*}
+    &\text{9.} & -a \cdot 0 &= -a \cdot 0 & &\text{Refl} \\
+    &\text{10.} & (a \cdot 0) + (-a \cdot 0) &= (a \cdot 0 + a \cdot 0) + (-a \cdot 0) & &\text{Congr + (8)(9)}
+\end{align*}
+Para obtener la ecuación \((a \cdot 0) + (-a \cdot 0) = 0\) utilizamos implícitamente las reglas de Hyp e Inst
+\begin{align*}
+    &\text{11.} & x + (-x) &= 0 & &\text{Hyp} \\
+    &\text{12.} & (a \cdot 0) + (-a \cdot 0) &= 0 & &\text{Inst (11)}
+\end{align*}
+Para obtener la ecuación \(0 = (a \cdot 0 + a \cdot 0) + (-a \cdot 0)\)
+utilizamos implícitamente las reglas de Sym y Trans
+\begin{align*}
+    &\text{13.} & 0 &= (a \cdot 0) + (-a \cdot 0) & &\text{Sym (12)} \\
+    &\text{14.} & 0 &= (a \cdot 0 + a \cdot 0) + (-a \cdot 0)  & &\text{Trans (13)(10)}
+\end{align*}
+Para obtener la ecuación \(0 = a \cdot 0 + (a \cdot 0 + (-a \cdot 0))\)
+utilizamos implícitamente las reglas de Hyp, Ints y Trans
+\begin{align*}
+    &\text{15.} & (x + y) + z &= x + (y + z) & &\text{Hyp } A2 \\
+    &\text{16.} &  (a \cdot 0 + a \cdot 0) + (-a \cdot 0) &= a \cdot 0 + (a \cdot 0 + (-a \cdot 0))  & &\text{Inst (15)} \\
+    &\text{17.} &  0 &= a \cdot 0 + (a \cdot 0 + (-a \cdot 0))  & &\text{Trans (14)(16)}
+\end{align*}
+Para obtener la ecuación \(a \cdot 0 + (a \cdot 0 + (-a \cdot 0)) = a \cdot 0 + 0\)
+utilizamos implícitamente las reglas de Refl y Congr
+\begin{align*}
+    &\text{18.} & a \cdot 0 &= a \cdot 0 & &\text{Refl} \\
+    &\text{19.} & a \cdot 0 + (a \cdot 0 + (-a \cdot 0)) &= a \cdot 0 + 0  & &\text{Congr + (18)(12)}
+\end{align*}
+Para obtener la ecuación \(0 = a \cdot 0 + 0\) utilizamos implícitamente la regla de Trans
+\begin{align*}
+    &\text{20.} & 0 &= a \cdot 0 + 0 & &\text{Trans (17)(19)}
+\end{align*}
+Para obtener la ecuación \(a \cdot 0 = 0\) utilizamos implícitamente las reglas de
+\begin{align*}
+    &\text{21.} & a \cdot 0 + 0 &= 0 & &\text{Sym (20)} \\
+    &\text{22.} & a \cdot 0 + 0 &= a \cdot 0 & &\text{Inst (2)} \\
+    &\text{23.} & a \cdot 0 &= a \cdot 0 + 0 & &\text{Sym (22)} \\
+    &\text{24.} & a \cdot 0 &= 0 & &\text{Trans (23)(21)}
+\end{align*}
+Por lo tanto queda demostrada la igualdad.
+\newline 
+La demostración sin el análisis anterior quedaría de la siguiente manera:
+\begin{align*}
+    &\text{1.} & a &= a & &\text{Refl} \\
+    &\text{2.} & x + 0 &= x & &\text{Hyp} \\
+    &\text{3.} & 0 + 0 &= 0 & &\text{Inst (2)} \\
+    &\text{4.} & 0 &= 0 + 0 & &\text{Sym (3)} \\
+    &\text{5.} & a \cdot 0 &= a \cdot (0 + 0) & &\text{Congr \(\cdot\) (1)(4)} \\
+    &\text{6.} & x \cdot (y + z) &= x \cdot y + x \cdot z & &\text{Hyp} A6 \\
+    &\text{7.} & a \cdot (0 + 0) &= a \cdot 0 + a \cdot 0 & &\text{Inst (6)} \\
+    &\text{8.} & a \cdot 0 &= a \cdot 0 + a \cdot 0 & &\text{Trans (5)(7)} \\
+    &\text{9.} & -a \cdot 0 &= -a \cdot 0 & &\text{Refl} \\
+    &\text{10.} & (a \cdot 0) + (-a \cdot 0) &= (a \cdot 0 + a \cdot 0) + (-a \cdot 0) & &\text{Congr + (8)(9)} \\
+    &\text{11.} & x + (-x) &= 0 & &\text{Hyp} \\
+    &\text{12.} & (a \cdot 0) + (-a \cdot 0) &= 0 & &\text{Inst (11)} \\
+    &\text{13.} & 0 &= (a \cdot 0) + (-a \cdot 0) & &\text{Sym (12)} \\
+    &\text{14.} & 0 &= (a \cdot 0 + a \cdot 0) + (-a \cdot 0)  & &\text{Trans (13)(10)} \\
+    &\text{15.} & (x + y) + z &= x + (y + z) & &\text{Hyp } A2 \\
+    &\text{16.} &  (a \cdot 0 + a \cdot 0) + (-a \cdot 0) &= a \cdot 0 + (a \cdot 0 + (-a \cdot 0))  & &\text{Inst (15)} \\
+    &\text{17.} &  0 &= a \cdot 0 + (a \cdot 0 + (-a \cdot 0))  & &\text{Trans (14)(16)} \\
+    &\text{18.} & a \cdot 0 &= a \cdot 0 & &\text{Refl} \\
+    &\text{19.} & a \cdot 0 + (a \cdot 0 + (-a \cdot 0)) &= a \cdot 0 + 0  & &\text{Congr + (18)(12)} \\
+    &\text{20.} & 0 &= a \cdot 0 + 0 & &\text{Trans (17)(19)} \\
+    &\text{21.} & a \cdot 0 + 0 &= 0 & &\text{Sym (20)} \\
+    &\text{22.} & a \cdot 0 + 0 &= a \cdot 0 & &\text{Inst (2)} \\
+    &\text{23.} & a \cdot 0 &= a \cdot 0 + 0 & &\text{Sym (22)} \\
+    &\text{24.} & a \cdot 0 &= 0 & &\text{Trans (23)(21)}
+\end{align*}
+Sin el análisis anterior la demostración parecería sacada de la manga o al menos 
+muy ``esotérica''.
+\subsection{Conclusión}
+\noindent
+Tanto la demostración usual como la demostración con lógica ecuacional son equivalentes y 
+de hecho hicimos explícito el hecho de que al momento de demostrar de la forma usual 
+es decir haciendo la secuencia de axiomas implícitamente estamos usando las reglas de la 
+lógica ecuacional.
+\end{document}

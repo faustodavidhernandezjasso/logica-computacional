@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article} 
+\input{head}
+\newcommand{\pow}[2]{#1^{#2}}
+\newcommand{\supra}[1]{\textsuperscript{#1}}
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+\footnotesize
+Fausto David Hernández Jasso \hfill\\   
+@FaustoJH \hfill\\
+fausto.david.hernandez.jasso@ciencias.unam.mx
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+Lógica Computacional I\\ 
+\normalsize 
+Tarea 03\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+\section{Ejercicio 1}
+Demuestra usando el algoritmo DPLL con búsqueda hacia atrás si los siguientes conjuntos son satisfacibles:
+\begin{enumerate}
+    \item \(\{p \rightarrow s \lor t, m \land r \leftrightarrow s, s, m\}\)
+    \item \(\{k \leftrightarrow r \lor p, k \land p \rightarrow \neg \left(s \land p\right), \neg \left(\neg k \lor r\right), \neg s \}\)
+\end{enumerate}
+\end{document}
