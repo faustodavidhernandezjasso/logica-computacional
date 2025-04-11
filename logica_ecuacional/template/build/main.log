@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.2.26)  11 APR 2025 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.2.26)  11 APR 2025 17:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1281,7 +1281,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) (C:\Users\faust\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 72--77
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
@@ -1295,7 +1295,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--77
 
 [3]
 
-[4] (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\logica_ecuacional\template\build\main.aux
+[4]
+
+[5] (c:\Users\faust\Documents\Logica_Computacional\logica-computacional\logica_ecuacional\template\build\main.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1305,23 +1307,23 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1448CCB726E478FA3ED833DE665388B7;2335.
+(rerunfilecheck)             Checksum: F8EA34E9ABC3C7E7054C64F992320ABE;2507.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40000 strings out of 473523
- 764650 string characters out of 5724697
- 1688099 words of memory out of 5000000
- 62467 multiletter control sequences out of 15000+600000
- 582869 words of font info for 117 fonts, out of 8000000 for 9000
+ 40016 strings out of 473523
+ 764798 string characters out of 5724697
+ 1688101 words of memory out of 5000000
+ 62468 multiletter control sequences out of 15000+600000
+ 584015 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,13n,104p,1183b,1798s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/faust/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on c:\Users\faust\Documents\Logica_Computacional\logica-computacional\logica_ecuacional\template\build\main.pdf (4 pages, 130497 bytes).
+Output written on c:\Users\faust\Documents\Logica_Computacional\logica-computacional\logica_ecuacional\template\build\main.pdf (5 pages, 135022 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 36973 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 36981 words of extra memory for PDF output out of 42996 (max. 10000000)
 
